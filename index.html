@@ -110,7 +110,7 @@ h2{font-family:var(--display);font-weight:600;font-size:30px;margin:0;line-heigh
 .tree{position:relative}
 .tree svg{position:absolute;left:0;top:0;overflow:visible;pointer-events:none}
 .tree svg path{fill:none;stroke:var(--line);stroke-width:1.6}
-.node{position:absolute;width:224px;height:66px;display:flex;align-items:stretch;background:var(--sheet);border:1px solid var(--line);border-radius:10px;box-shadow:0 1px 0 rgba(0,0,0,.03);transition:border-color .15s,box-shadow .15s}
+.node{position:absolute;width:224px;height:84px;display:flex;align-items:stretch;background:var(--sheet);border:1px solid var(--line);border-radius:10px;box-shadow:0 1px 0 rgba(0,0,0,.03);transition:border-color .15s,box-shadow .15s}
 .node:hover{border-color:var(--indigo);box-shadow:var(--shadow)}
 .node .stripe{width:5px;border-radius:9px 0 0 9px;flex:none}
 .node .main{flex:1;min-width:0;padding:7px 8px 6px 10px;cursor:pointer;background:none;border:0;text-align:left}
@@ -120,7 +120,7 @@ h2{font-family:var(--display);font-weight:600;font-size:30px;margin:0;line-heigh
 .node .tog:hover{color:var(--ink);background:color-mix(in srgb,var(--indigo) 7%,transparent)}
 .node.root{border-color:var(--g17);border-width:1.5px}
 .node.root .nm{white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
-.node.root .mt + .mt{display:none}
+.node.root .mt + .mt + .mt{display:none}
 .node.sel{border-color:var(--marigold);box-shadow:0 0 0 3px color-mix(in srgb,var(--marigold) 30%,transparent)}
 .late{font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:4px;padding:0 4px;margin-left:5px;vertical-align:1px}
 .colhead{position:absolute;top:0;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);width:224px;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -341,7 +341,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-betw
       </div>
       <div class="tablebox">
         <table>
-          <thead><tr><th>Name</th><th>Generation</th><th>Born</th><th>Birthplace</th><th>Lives in</th><th>Spouse</th><th>Son / daughter of</th></tr></thead>
+          <thead><tr><th>Name</th><th>Generation</th><th>Born</th><th>Place of birth</th><th>Residing at</th><th>Spouse</th><th>Son / daughter of</th></tr></thead>
           <tbody id="tbody"></tbody>
         </table>
       </div>
@@ -482,8 +482,8 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-betw
         <label class="full">Name before marriage (for daughters)<input id="f-maiden" maxlength="120" placeholder="e.g. Krishna Gupta"></label>
         <label>Date of birth<input id="f-born" placeholder="DD.MM.YYYY" maxlength="10" inputmode="decimal"></label>
         <label>Place of birth<input id="f-birthplace" maxlength="80"></label>
-        <label>Lives in<input id="f-lives" maxlength="80" placeholder="City, country"></label>
-        <label>Gotra / sur name<input id="f-surname" maxlength="60"></label>
+        <label>Residing at<input id="f-lives" maxlength="80" placeholder="City, country"></label>
+        <label>Gotra<input id="f-gotra" maxlength="60" placeholder="e.g. Goyal"></label>
         <label class="check"><input type="checkbox" id="f-deceased"> No longer with us</label>
         <label>Date of passing<input id="f-died" placeholder="DD.MM.YYYY" maxlength="10" inputmode="decimal"></label>
       </fieldset>
@@ -492,6 +492,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-betw
         <label class="full">Name<input id="f-spouse" maxlength="120"></label>
         <label>Family (sur name)<input id="f-spouseFamily" maxlength="60" placeholder="e.g. Agarwal"></label>
         <label>Home town<input id="f-spousePlace" maxlength="80"></label>
+        <label>Gotra<input id="f-spouseGotra" maxlength="60" placeholder="e.g. Goyal"></label>
         <label>Date of birth<input id="f-spouseBorn" placeholder="DD.MM.YYYY" maxlength="10" inputmode="decimal"></label>
         <label>Date of passing (if any)<input id="f-spouseDied" placeholder="DD.MM.YYYY" maxlength="10" inputmode="decimal"></label>
         <label>Date of marriage (anniversary)<input id="f-anniv" placeholder="DD.MM.YYYY" maxlength="10" inputmode="decimal"></label>
@@ -527,48 +528,48 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-betw
 "use strict";
 const PUBLIC = true;
 const FAMILY_SITE = "https://claude.ai/artifact/1GWf3D6m8ynFiDhrmTxiPN";
-const SNAPSHOT = {"chandralekha": {"anniversary": "", "birthplace": "Sikar", "born": "18.11.1940", "deceased": false, "died": "", "gender": "f", "lives": "Delhi", "maiden": "Chandralekha Gupta", "marriagePlace": "Jaipur", "name": "Chandralekha Jindal", "notes": "", "parent": "shiv-prasad", "spouse": "R.S.Jindal", "spouseBorn": "", "spouseDied": "", "spouseFamily": "Jindal", "spousePlace": "Samalkha, Haryana", "surname": "", "updatedAt": "2026-11-21T07:06:42.835Z"}, "rajeshwar": {"anniversary": "", "birthplace": "Ajmer", "born": "15.10.1942", "deceased": false, "died": "", "gender": "m", "lives": "Jaipur", "maiden": "", "marriagePlace": "", "name": "Rajeshwar Prasad Gupta", "notes": "", "parent": "shiv-prasad", "spouse": "Manju Gupta", "spouseBorn": "", "spouseDied": "", "spouseFamily": "", "spousePlace": "Ajmer", "surname": "Goyal", "updatedAt": "2026-11-21T07:10:00.369Z"}};
+const SNAPSHOT = {"atul": {"anniversary": "", "birthplace": "Agra", "born": "09.01.1961", "deceased": false, "died": "", "gender": "m", "lives": "Jaipur", "maiden": "", "marriagePlace": "", "name": "Dr. Atul Gupta", "notes": "", "parent": "dwarka-prasad", "spouse": "Pramila", "spouseBorn": "", "spouseDied": "", "spouseFamily": "", "spousePlace": "", "surname": "Goyal", "updatedAt": "2026-11-21T07:49:52.006Z"}, "chandralekha": {"anniversary": "", "birthplace": "Sikar", "born": "18.11.1940", "deceased": false, "died": "", "gender": "f", "lives": "Delhi", "maiden": "Chandralekha Gupta", "marriagePlace": "Jaipur", "name": "Chandralekha Jindal", "notes": "", "parent": "shiv-prasad", "spouse": "R.S.Jindal", "spouseBorn": "", "spouseDied": "", "spouseFamily": "Jindal", "spousePlace": "Samalkha, Haryana", "surname": "", "updatedAt": "2026-11-21T07:06:42.835Z"}, "rajeshwar": {"anniversary": "", "birthplace": "Ajmer", "born": "15.10.1942", "deceased": false, "died": "", "gender": "m", "lives": "Jaipur", "maiden": "", "marriagePlace": "", "name": "Rajeshwar Prasad Gupta", "notes": "", "parent": "shiv-prasad", "spouse": "Manju Gupta", "spouseBorn": "", "spouseDied": "", "spouseFamily": "", "spousePlace": "Ajmer", "surname": "Goyal", "updatedAt": "2026-11-21T07:10:00.369Z"}};
 /* ---------- Family register: descendants of Rao Bahadur Madho Prasad Gupta ---------- */
 const ROOT = "madho-prasad";
 const REGISTER = [
- {id:"madho-prasad",gender:"m",name:"Rao Bahadur Madho Prasad Gupta",parent:null,born:"05.03.1894",birthplace:"Nasirabad",deceased:true,spouse:"Saroj Devi",notes:"B.A. (1914), LL.B. (1926). Practised law at Ajmer until 1929, when he joined the Jaipur State Judicial Service as Munsif. Honoured with the title of Rao Bahadur. Retired in 1951 as the first Registrar of the Rajasthan High Court.\nSecond son of Moonalal Ji (Head Clerk, BB&CI Railways). Saligram Parivaar, Shura Shah Parivaar."},
- {id:"shiv-prasad",gender:"m",name:"Shiv Prasad Gupta",parent:"madho-prasad",born:"21.12.1916",birthplace:"Ajmer",deceased:true,spousePlace:"Ajmer"},
- {id:"hari-prasad",gender:"m",name:"Hari Prasad Gupta",parent:"madho-prasad",born:"21.10.1919",birthplace:"Nasirabad",lives:"Jaipur",spouse:"Sarla Devi",spousePlace:"Jodhpur"},
+ {id:"madho-prasad",gender:"m",name:"Rao Bahadur Madho Prasad Gupta",parent:null,born:"05.03.1894",birthplace:"Nasirabad",deceased:true,spouse:"Saroj Devi",notes:"B.A. (1914), LL.B. (1926). Practised law at Ajmer until 1929, when he joined the Jaipur State Judicial Service as Munsif. Honoured with the title of Rao Bahadur. Retired in 1951 as the first Registrar of the Rajasthan High Court.\nSecond son of Moonalal Ji (Head Clerk, BB&CI Railways). Saligram Parivaar, Shura Shah Parivaar.",gotra:"Goyal",spouseGotra:"Goyal"},
+ {id:"shiv-prasad",gender:"m",name:"Shiv Prasad Gupta",parent:"madho-prasad",born:"21.12.1916",birthplace:"Ajmer",deceased:true,spousePlace:"Ajmer",gotra:"Goyal"},
+ {id:"hari-prasad",gender:"m",name:"Hari Prasad Gupta",parent:"madho-prasad",born:"21.10.1919",birthplace:"Nasirabad",lives:"Jaipur",spouse:"Sarla Devi",spousePlace:"Jodhpur",gotra:"Goyal",spouseGotra:"Goyal"},
  {id:"krishna-jain",gender:"f",name:"Krishna Jain",parent:"madho-prasad",born:"24.09.1923",birthplace:"Nasirabad",deceased:true,spouse:"Sumer Chand Jain",spouseFamily:"Jain",spousePlace:"Nasirabad",maiden:"Krishna Gupta"},
- {id:"dwarka-prasad",gender:"m",name:"Justice Dwarka Prasad Gupta",parent:"madho-prasad",born:"21.07.1926",died:"18.06.1993",deceased:true,birthplace:"Nasirabad",spouse:"Shail Gupta",spouseFamily:"Bansal",spousePlace:"Agra",notes:"Third son of Rao Bahadur Madho Prasad Gupta. LL.B. (1946). Elevated as Judge of the Rajasthan High Court in 1973 and as Chief Justice in 1986."},
+ {id:"dwarka-prasad",gender:"m",name:"Justice Dwarka Prasad Gupta",parent:"madho-prasad",born:"21.07.1926",died:"18.06.1993",deceased:true,birthplace:"Nasirabad",spouse:"Shail Gupta",spouseFamily:"Bansal",spousePlace:"Agra",notes:"Third son of Rao Bahadur Madho Prasad Gupta. LL.B. (1946). Elevated as Judge of the Rajasthan High Court in 1973 and as Chief Justice in 1986.",gotra:"Goyal",spouseGotra:"Goyal"},
  {id:"haripyari",gender:"f",name:"Haripyari Gupta",parent:"madho-prasad",born:"07.01.1929",birthplace:"Ajmer",lives:"Jaipur",spouse:"Dr. M.L. Gupta",spouseFamily:"Gupta",spousePlace:"Jaipur",maiden:"Haripyari Gupta"},
- {id:"jwala-prasad",gender:"m",name:"Jwala Prasad Gupta",parent:"madho-prasad",born:"03.05.1932",birthplace:"Jaipur",lives:"USA",spouse:"Meena",spousePlace:"Ratlam",notes:"Moved to the USA in 1974."},
+ {id:"jwala-prasad",gender:"m",name:"Jwala Prasad Gupta",parent:"madho-prasad",born:"03.05.1932",birthplace:"Jaipur",lives:"USA",spouse:"Meena",spousePlace:"Ratlam",notes:"Moved to the USA in 1974.",gotra:"Goyal",spouseGotra:"Goyal"},
  {id:"sarla-sanghi",gender:"f",name:"Sarla Sanghi",parent:"madho-prasad",born:"03.10.1934",birthplace:"Jaipur",lives:"Bangalore",spouse:"G.R.C. Sanghi",spouseFamily:"Sanghi",spousePlace:"Mhow",maiden:"Sarla Gupta"},
 
  {id:"chandralekha",gender:"f",name:"Chandralekha Jindal",parent:"shiv-prasad",born:"18.11.1940",birthplace:"Sikar",lives:"Delhi",spouseFamily:"Jindal",maiden:"Chandralekha Gupta"},
- {id:"rajeshwar",gender:"m",name:"Rajeshwar Prasad Gupta",parent:"shiv-prasad",born:"15.10.1942",birthplace:"Ajmer",lives:"Jaipur"},
+ {id:"rajeshwar",gender:"m",name:"Rajeshwar Prasad Gupta",parent:"shiv-prasad",born:"15.10.1942",birthplace:"Ajmer",lives:"Jaipur",gotra:"Goyal"},
  {id:"rama-agarwal",gender:"f",name:"Rama Agarwal",parent:"shiv-prasad",born:"06.10.1944",birthplace:"Ajmer",lives:"Jaipur",spouseFamily:"Agarwal",maiden:"Rama Gupta"},
- {id:"kamaleshwar",gender:"m",name:"Kamaleshwar Gupta (Kam)",parent:"hari-prasad",born:"13.12.1944",birthplace:"Delhi",lives:"Chicago, USA",notes:"Moved to the USA in 1967."},
- {id:"bimleshwar",gender:"m",name:"Bimleshwar Gupta (Bim)",parent:"hari-prasad",born:"17.05.1946",birthplace:"Jaipur",lives:"USA",notes:"Moved to the USA in 1969."},
- {id:"amareshwar",gender:"m",name:"Amareshwar Gupta",parent:"dwarka-prasad",born:"22.04.1953",birthplace:"Agra",lives:"Jaipur"},
- {id:"aruneshwar",gender:"m",name:"Aruneshwar Gupta",parent:"dwarka-prasad",born:"10.01.1955",birthplace:"Agra",lives:"Delhi",spouse:"Padma",spouseFamily:"Agarwal",spousePlace:"Jaipur",notes:"Second son of Justice D.P. Gupta. Senior Advocate, Supreme Court of India. Moved to Delhi in 1976. Settlor of the Shri Shurashah Manoharpur Trust (2020)."},
- {id:"atul",gender:"m",name:"Dr. Atul Gupta",parent:"dwarka-prasad",born:"09.01.1961",birthplace:"Agra",lives:"Jaipur",spouse:"Pramila"},
+ {id:"kamaleshwar",gender:"m",name:"Kamaleshwar Gupta (Kam)",parent:"hari-prasad",born:"13.12.1944",birthplace:"Delhi",lives:"Chicago, USA",notes:"Moved to the USA in 1967.",gotra:"Goyal"},
+ {id:"bimleshwar",gender:"m",name:"Bimleshwar Gupta (Bim)",parent:"hari-prasad",born:"17.05.1946",birthplace:"Jaipur",lives:"USA",notes:"Moved to the USA in 1969.",gotra:"Goyal"},
+ {id:"amareshwar",gender:"m",name:"Amareshwar Gupta",parent:"dwarka-prasad",born:"22.04.1953",birthplace:"Agra",lives:"Jaipur",gotra:"Goyal"},
+ {id:"aruneshwar",gender:"m",name:"Aruneshwar Gupta",parent:"dwarka-prasad",born:"10.01.1955",birthplace:"Agra",lives:"Delhi",spouse:"Padma",spouseFamily:"Agarwal",spousePlace:"Jaipur",notes:"Second son of Justice D.P. Gupta. Senior Advocate, Supreme Court of India. Moved to Delhi in 1976. Settlor of the Shri Shurashah Manoharpur Trust (2020).",gotra:"Goyal",spouseGotra:"Goyal"},
+ {id:"atul",gender:"m",name:"Dr. Atul Gupta",parent:"dwarka-prasad",born:"09.01.1961",birthplace:"Agra",lives:"Jaipur",spouse:"Pramila",gotra:"Goyal",spouseGotra:"Goyal"},
  {id:"alka-das",gender:"f",name:"Alka Das",parent:"dwarka-prasad",born:"13.01.1964",birthplace:"Agra",lives:"Lucknow",spouse:"Akhilesh Das Gupta",spouseFamily:"Das",maiden:"Alka Gupta"},
  {id:"anita-agarwal",gender:"f",name:"Anita Agarwal",parent:"jwala-prasad",born:"02.02.1957",birthplace:"Jaipur",lives:"USA",spouse:"Rahul Agarwal",spouseFamily:"Agarwal",maiden:"Anita Gupta",notes:"Moved to the USA in 1974."},
- {id:"akhil",gender:"m",name:"Akhil Gupta",parent:"jwala-prasad",born:"21.03.1959",birthplace:"Bilaspur",lives:"USA",spouse:"Poornima",notes:"Moved to the USA in 1974."},
+ {id:"akhil",gender:"m",name:"Akhil Gupta",parent:"jwala-prasad",born:"21.03.1959",birthplace:"Bilaspur",lives:"USA",spouse:"Poornima",notes:"Moved to the USA in 1974.",gotra:"Goyal",spouseGotra:"Goyal"},
 
  {id:"alpana",gender:"f",name:"Alpana Gupta",parent:"rajeshwar",born:"08.06.1969",birthplace:"Ajmer",lives:"Jaipur",spouse:"Vijay"},
- {id:"ashish",gender:"m",name:"Ashish Gupta",parent:"rajeshwar",born:"06.06.1972",birthplace:"Jaipur",lives:"Jaipur",spouse:"Pooja",spouseFamily:"Bansal",spousePlace:"Kota"},
- {id:"pankaj",gender:"m",name:"Pankaj Gupta",parent:"kamaleshwar",born:"11.03.1976",birthplace:"Elgin, Chicago",lives:"USA"},
- {id:"parag",gender:"m",name:"Parag Gupta",parent:"kamaleshwar",born:"27.02.1986",birthplace:"Elgin, Chicago",lives:"USA"},
+ {id:"ashish",gender:"m",name:"Ashish Gupta",parent:"rajeshwar",born:"06.06.1972",birthplace:"Jaipur",lives:"Jaipur",spouse:"Pooja",spouseFamily:"Bansal",spousePlace:"Kota",gotra:"Goyal",spouseGotra:"Goyal"},
+ {id:"pankaj",gender:"m",name:"Pankaj Gupta",parent:"kamaleshwar",born:"11.03.1976",birthplace:"Elgin, Chicago",lives:"USA",gotra:"Goyal"},
+ {id:"parag",gender:"m",name:"Parag Gupta",parent:"kamaleshwar",born:"27.02.1986",birthplace:"Elgin, Chicago",lives:"USA",gotra:"Goyal"},
  {id:"anjali",gender:"f",name:"Anjali Gupta",parent:"bimleshwar",born:"02.03.1978",birthplace:"Denver",lives:"USA"},
- {id:"neeraj",gender:"m",name:"Neeraj Gupta",parent:"bimleshwar",born:"19.12.1980",birthplace:"Denver",lives:"USA"},
+ {id:"neeraj",gender:"m",name:"Neeraj Gupta",parent:"bimleshwar",born:"19.12.1980",birthplace:"Denver",lives:"USA",gotra:"Goyal"},
  {id:"aditi",gender:"f",name:"Aditi Gupta",parent:"amareshwar",born:"04.12.1983",birthplace:"Jaipur",lives:"Jaipur"},
  {id:"nandita",gender:"f",name:"Nandita Gupta",parent:"amareshwar",born:"28.12.1986",birthplace:"Jaipur",lives:"Jaipur"},
- {id:"chetanya",gender:"m",name:"Chetanya Gupta",parent:"amareshwar",born:"10.11.1990",birthplace:"Jaipur",lives:"Jaipur"},
- {id:"shashwat",gender:"m",name:"Shashwat Gupta",parent:"aruneshwar",born:"24.03.1983",birthplace:"Jaipur",lives:"Singapore",spouse:"Pallavi",spouseFamily:"Malviya",spousePlace:"Delhi"},
- {id:"shitij",gender:"m",name:"Shitij Gupta",parent:"aruneshwar",born:"02.12.1987",birthplace:"Jaipur",lives:"Delhi",spouse:"Reshika",spouseFamily:"Bagaria",spousePlace:"Dibrugarh"},
+ {id:"chetanya",gender:"m",name:"Chetanya Gupta",parent:"amareshwar",born:"10.11.1990",birthplace:"Jaipur",lives:"Jaipur",gotra:"Goyal"},
+ {id:"shashwat",gender:"m",name:"Shashwat Gupta",parent:"aruneshwar",born:"24.03.1983",birthplace:"Jaipur",lives:"Singapore",spouse:"Pallavi",spouseFamily:"Malviya",spousePlace:"Delhi",gotra:"Goyal",spouseGotra:"Goyal"},
+ {id:"shitij",gender:"m",name:"Shitij Gupta",parent:"aruneshwar",born:"02.12.1987",birthplace:"Jaipur",lives:"Delhi",spouse:"Reshika",spouseFamily:"Bagaria",spousePlace:"Dibrugarh",gotra:"Goyal",spouseGotra:"Goyal"},
  {id:"purva",gender:"f",name:"Purva Gupta",parent:"atul",born:"20.06.1989",birthplace:"Jaipur",lives:"Jaipur"},
  {id:"shriya",gender:"f",name:"Shriya Gupta",parent:"atul",born:"24.06.1992",birthplace:"Jaipur",lives:"Jaipur"},
  {id:"diya",gender:"f",name:"Diya Gupta",parent:"akhil",born:"11.04.2003",birthplace:"Delhi",lives:"USA"},
 
  {id:"nandini",gender:"f",name:"Nandini Gupta",parent:"ashish",born:"19.01.2001",birthplace:"Jaipur",lives:"Jaipur"},
- {id:"naman",gender:"m",name:"Naman Gupta",parent:"ashish",born:"20.03.2003",birthplace:"Jaipur",lives:"Jaipur"}
+ {id:"naman",gender:"m",name:"Naman Gupta",parent:"ashish",born:"20.03.2003",birthplace:"Jaipur",lives:"Jaipur",gotra:"Goyal"}
 ];
 
 const LINEAGE = [
@@ -649,7 +650,7 @@ function so(r){ return r.gender === "f" ? "D/o" : r.gender === "m" ? "S/o" : "Ch
 function marriedInto(r){ return isDaughter(r) && str(r.spouseFamily) ? `Married into the ${r.spouseFamily} family` : ""; }
 
 /* ---------- Merge register + family additions ---------- */
-const FIELDS = ["name","gender","maiden","parent","born","died","deceased","birthplace","lives","surname","spouse","spouseFamily","spousePlace","spouseBorn","spouseDied","anniversary","marriagePlace","notes","updatedBy","updatedAt"];
+const FIELDS = ["name","gender","maiden","parent","born","died","deceased","birthplace","lives","surname","gotra","spouseGotra","spouse","spouseFamily","spousePlace","spouseBorn","spouseDied","anniversary","marriagePlace","notes","updatedBy","updatedAt"];
 function rebuild(){
   const merged = {};
   for (const r of REGISTER) merged[r.id] = {...r};
@@ -660,6 +661,7 @@ function rebuild(){
     for (const f of FIELDS) if (f in d) rec[f] = (f === "deceased") ? !!d[f] : (d[f] == null ? "" : String(d[f]).slice(0, f==="notes"?1000:160));
     if (id === ROOT) rec.parent = null;
     rec.removed = !!d.removed;
+    if (!str(d.gotra) && str(d.surname) && !str(base.gotra)) rec.gotra = d.surname;
     rec.edited = true;
     rec.fromFamily = !REGISTER.some(r=>r.id===id);
     if (!str(rec.name)) continue;
@@ -669,6 +671,7 @@ function rebuild(){
   const ch = {};
   for (const r of Object.values(merged)) if (!r.removed && r.parent && merged[r.parent]) (ch[r.parent] ||= []).push(r.id);
   for (const k in ch) ch[k].sort((a,b)=>sortKey(merged[a])-sortKey(merged[b]) || merged[a].name.localeCompare(merged[b].name));
+  for (const r of Object.values(merged)) if (r.gender === "m"){ if (!str(r.gotra)) r.gotra = "Goyal"; if (str(r.spouse) && !str(r.spouseGotra)) r.spouseGotra = "Goyal"; }
   people = {}; kids = {}; gens = {};
   (function walk(id, g, seen){
     if (seen.has(id)) return; seen.add(id);
@@ -768,7 +771,7 @@ function renderLegend(){
     el("span",null, el("i",{style:`background:${genColor(g)}`}), `${genShort(g)} · ${genName(g)}`)));
 }
 
-const CW = 224, CH = 66, COL = 278, ROWH = 80, TOP = 44;
+const CW = 224, CH = 84, COL = 278, ROWH = 98, TOP = 44;
 function renderTree(){
   document.getElementById("lay-tree").setAttribute("aria-pressed", layoutMode==="tree");
   document.getElementById("lay-outline").setAttribute("aria-pressed", layoutMode==="outline");
@@ -805,7 +808,8 @@ function drawChart(){
       path.setAttribute("d",`M${x1},${y1} C${mx},${y1} ${mx},${y2} ${x2},${y2}`);
       svg.appendChild(path);
     }
-    const meta1 = [r.born ? "b. "+shortDate(r.born) : "", str(r.lives) || str(r.birthplace)].filter(Boolean).join(" · ");
+    const meta1 = [r.born ? "b. "+shortDate(r.born) : "", str(r.birthplace)].filter(Boolean).join(" · ");
+    const metaR = str(r.lives) ? "Residing at: " + r.lives : (r.died ? "d. "+shortDate(r.died) : "");
     const meta2 = str(r.spouse) ? "m. " + r.spouse + (isDaughter(r) && str(r.spouseFamily) && !r.spouse.includes(r.spouseFamily) ? ` · ${r.spouseFamily} family` : "") : (marriedInto(r) || (r.died ? "d. "+shortDate(r.died) : ""));
     const n = kids[id].length;
     frag.push(el("div",{class:"node"+(id===ROOT?" root":"")+(id===selected?" sel":""),style:`left:${p.x}px;top:${p.y}px`,"data-id":id},
@@ -813,7 +817,8 @@ function drawChart(){
       el("button",{class:"main",title:r.name,onclick:()=>openDrawer(id)},
         el("div",{class:"nm"}, r.name, isLate(r) ? el("span",{class:"late",text:"Late"}) : null),
         el("div",{class:"mt",text:meta1 || " "}),
-        el("div",{class:"mt",text:meta2 || " "})),
+        el("div",{class:"mt",text:metaR || " "}),
+        el("div",{class:"mt",text:meta2 && meta2 !== metaR ? meta2 : " "})),
       n ? el("button",{class:"tog","aria-expanded":String(!collapsed.has(id)),"aria-label":`${collapsed.has(id)?"Unfold":"Fold"} ${n} ${n===1?"child":"children"} of ${r.name}`,onclick:()=>{collapsed.has(id)?collapsed.delete(id):collapsed.add(id); renderTree();}},
         el("span",{text:collapsed.has(id)?"▸":"▾"}), el("span",{text:n})) : null
     ));
@@ -824,7 +829,7 @@ function drawChart(){
 function drawOutline(){
   function item(id){
     const r = people[id], k = kids[id], open = !collapsed.has(id);
-    const meta = [r.born ? shortDate(r.born) : "", str(r.spouse) ? "m. "+r.spouse : marriedInto(r), str(r.lives)].filter(Boolean).join(" · ");
+    const meta = [[r.born ? "b. "+shortDate(r.born) : "", str(r.birthplace)].filter(Boolean).join(", "), str(r.lives) ? "Residing at: "+r.lives : "", str(r.spouse) ? "m. "+r.spouse : marriedInto(r)].filter(Boolean).join(" · ");
     return el("li",null,
       el("div",{class:"orow"},
         k.length ? el("button",{class:"tg","aria-expanded":String(open),"aria-label":(open?"Fold ":"Unfold ")+r.name,onclick:()=>{open?collapsed.add(id):collapsed.delete(id); renderTree();},text:open?"▾":"▸"}) : el("span",{style:"width:22px;flex:none"}),
@@ -843,7 +848,7 @@ function renderMembers(){
     ...present.map(g=>el("button",{class:"chip","aria-pressed":String(genFilter===g),onclick:()=>{genFilter=g;renderMembers();},text:genNo(g)})));
   const rows = Object.values(people)
     .filter(r => genFilter===null || gens[r.id]===genFilter)
-    .filter(r => !q || [r.name,r.maiden,r.birthplace,r.lives,r.spouse,r.spouseFamily,r.notes].some(v=>str(v).toLowerCase().includes(q)))
+    .filter(r => !q || [r.name,r.maiden,r.gotra,r.birthplace,r.lives,r.spouse,r.spouseFamily,r.notes].some(v=>str(v).toLowerCase().includes(q)))
     .sort((a,b)=>gens[a.id]-gens[b.id] || sortKey(a)-sortKey(b));
   const total = Object.keys(people).length;
   document.getElementById("memcount").textContent = rows.length===total ? `${total} people in the register` : `${rows.length} of ${total} people`;
@@ -937,7 +942,8 @@ function openDrawer(id, quiet){
   add("Born", [fmtDate(r.born), str(r.birthplace) && `at ${r.birthplace}`].filter(Boolean).join(" ") || (str(r.birthplace) ? `at ${r.birthplace}` : ""));
   add("Name at birth", str(r.maiden));
   add("Register", `Generation ${gens[id]} of the Shura Shah Parivaar`);
-  add("Lives in", str(r.lives));
+  add("Gotra", str(r.gotra));
+  add("Residing at", str(r.lives));
   if (isLate(r)) add("Passed away", fmtDate(r.died) || "Yes");
   if (isDaughter(r)){
     add(r.gender==="f" ? "Husband" : "Spouse", str(r.spouse) ? [r.spouse, str(r.spousePlace) && `of ${r.spousePlace}`].filter(Boolean).join(" ") : "");
@@ -949,9 +955,9 @@ function openDrawer(id, quiet){
     const rel = r.gender==="f" ? "Husband's" : r.gender==="m" ? "Wife's" : "Spouse's";
     add(`${rel} birth`, fmtDate(r.spouseBorn));
     add(`${rel} passing`, fmtDate(r.spouseDied));
+    add(`${rel} gotra`, str(r.spouseGotra));
   }
   add("Date of marriage", [fmtDate(r.anniversary), str(r.marriagePlace) && `at ${r.marriagePlace}`].filter(Boolean).join(" "));
-  add("Sur name", str(r.surname));
   const body = [el("dl",{class:"facts"}, facts.length ? facts : [el("dt",{text:"Details"}), el("dd",{text:"Not yet recorded"})])];
   if (str(r.notes)) body.push(el("h4",{text:"Notes"}), el("div",{class:"notes",text:r.notes}));
   if (isDaughter(r) && str(r.spouseFamily) && !kids[id].length) body.push(el("p",{class:"note",style:"margin-top:14px",text:`Her children carry the ${r.spouseFamily} family name. They can be added here as her children so the tree shows Rao Bahadur's full descent.`}));
@@ -1011,7 +1017,8 @@ function openForm(mode, id){
   sel.value = mode==="edit" ? (r.parent||"") : (id || selected || ROOT);
   const set = (k,v)=>{ document.getElementById(k).value = v || ""; };
   set("f-name", r.name); set("f-maiden", r.maiden); document.getElementById("f-gender").value = r.gender === "f" ? "f" : "m";
-  document.getElementById("f-gender").disabled = mode==="edit" && id===ROOT; set("f-born", r.born); set("f-birthplace", r.birthplace); set("f-lives", r.lives); set("f-surname", r.surname);
+  document.getElementById("f-gender").disabled = mode==="edit" && id===ROOT; set("f-born", r.born); set("f-birthplace", r.birthplace); set("f-lives", r.lives); set("f-gotra", r.gotra); set("f-spouseGotra", r.spouseGotra);
+  if (mode==="add"){ set("f-gotra","Goyal"); set("f-spouseGotra","Goyal"); }
   set("f-spouse", r.spouse); set("f-spouseFamily", r.spouseFamily); set("f-spousePlace", r.spousePlace); set("f-anniv", r.anniversary); set("f-spouseBorn", r.spouseBorn); set("f-spouseDied", r.spouseDied); set("f-marriagePlace", r.marriagePlace);
   set("f-died", r.died); set("f-notes", r.notes);
   document.getElementById("f-deceased").checked = !!r.deceased || !!str(r.died);
@@ -1038,7 +1045,7 @@ document.getElementById("form").addEventListener("submit", async e=>{
   const parent = formMode==="edit" && formId===ROOT ? null : v("f-parent");
   if (formId !== ROOT && !people[parent]){ msg("Choose whose son or daughter this is.", true); return; }
   const data = {
-    name, gender:document.getElementById("f-gender").value, maiden:v("f-maiden"), parent, born:normDate(v("f-born")), birthplace:v("f-birthplace"), lives:v("f-lives"), surname:v("f-surname"),
+    name, gender:document.getElementById("f-gender").value, maiden:v("f-maiden"), parent, born:normDate(v("f-born")), birthplace:v("f-birthplace"), lives:v("f-lives"), gotra:v("f-gotra"), spouseGotra:v("f-spouseGotra"),
     spouse:v("f-spouse"), spouseFamily:v("f-spouseFamily"), spousePlace:v("f-spousePlace"), anniversary:normDate(v("f-anniv")), spouseBorn:normDate(v("f-spouseBorn")), spouseDied:normDate(v("f-spouseDied")), marriagePlace:v("f-marriagePlace"),
     deceased:document.getElementById("f-deceased").checked || !!v("f-died"), died:normDate(v("f-died")), notes:v("f-notes"),
     updatedAt:new Date().toISOString(), updatedBy:myId || ""
@@ -1060,6 +1067,12 @@ document.getElementById("form").addEventListener("submit", async e=>{
   }
 });
 
+document.getElementById("f-gender").addEventListener("change", e=>{
+  if (formMode !== "add") return;
+  const sg = document.getElementById("f-spouseGotra");
+  if (e.target.value === "f" && sg.value === "Goyal") sg.value = "";
+  if (e.target.value === "m" && !sg.value) sg.value = "Goyal";
+});
 /* ---------- "Update my details" picker ---------- */
 function openPicker(){
   document.getElementById("picker").classList.add("on");
