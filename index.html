@@ -483,7 +483,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-betw
         <label>Date of birth<input id="f-born" placeholder="DD.MM.YYYY" maxlength="10" inputmode="decimal"></label>
         <label>Place of birth<input id="f-birthplace" maxlength="80"></label>
         <label>Residing at<input id="f-lives" maxlength="80" placeholder="City, country"></label>
-        <label>Gotra<input id="f-gotra" maxlength="60" placeholder="e.g. Goyal"></label>
+        <label>Gotra<input id="f-gotra" maxlength="60" placeholder="e.g. Goyal" title="Sons and unmarried daughters: Goyal. A married daughter takes her husband's gotra."></label>
         <label class="check"><input type="checkbox" id="f-deceased"> No longer with us</label>
         <label>Date of passing<input id="f-died" placeholder="DD.MM.YYYY" maxlength="10" inputmode="decimal"></label>
       </fieldset>
@@ -671,7 +671,15 @@ function rebuild(){
   const ch = {};
   for (const r of Object.values(merged)) if (!r.removed && r.parent && merged[r.parent]) (ch[r.parent] ||= []).push(r.id);
   for (const k in ch) ch[k].sort((a,b)=>sortKey(merged[a])-sortKey(merged[b]) || merged[a].name.localeCompare(merged[b].name));
-  for (const r of Object.values(merged)) if (r.gender === "m"){ if (!str(r.gotra)) r.gotra = "Goyal"; if (str(r.spouse) && !str(r.spouseGotra)) r.spouseGotra = "Goyal"; }
+  for (const r of Object.values(merged)){
+    if (r.gender === "m"){ if (!str(r.gotra)) r.gotra = "Goyal"; if (str(r.spouse) && !str(r.spouseGotra)) r.spouseGotra = "Goyal"; }
+    else if (r.gender === "f"){
+      // A daughter carries the Goyal gotra until marriage, then her husband's.
+      const married = !!(str(r.spouse) || str(r.spouseFamily) || str(r.maiden) || parseDate(r.anniversary));
+      if (!married){ if (!str(r.gotra)) r.gotra = "Goyal"; }
+      else if (!str(r.gotra) || r.gotra === "Goyal") r.gotra = str(r.spouseGotra) && r.spouseGotra !== "Goyal" ? r.spouseGotra : "";
+    }
+  }
   people = {}; kids = {}; gens = {};
   (function walk(id, g, seen){
     if (seen.has(id)) return; seen.add(id);
