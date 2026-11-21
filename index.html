@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Madho Niwas, Jaipur: the family tree and history of Rao Bahadur Madho Prasad Gupta (1894), first Registrar of the Rajasthan High Court, of the Saligram and Shura Shah Parivaar of Manoharpur.">
+<meta property="og:title" content="Madho Niwas · Family of Rao Bahadur Madho Prasad Gupta">
+<meta property="og:description" content="Family tree and history of the Saligram Parivaar of the Shura Shah Parivaar, Manoharpur, from 1500 to today.">
+<title>Madho Niwas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Instrument+Sans:wght@400;500;600&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: a family register in Jaipur indigo — ledger-ruled header, a left-to-right tree, generation stripes as the one colour code. */
+:root{
+  --paper:#f3f5fa;
+  --sheet:#ffffff;
+  --ink:#17203b;
+  --muted:#5b6582;
+  --line:#d6dcea;
+  --indigo:#23408c;
+  --marigold:#c9800e;
+  --g17:#7a2e1f; --g18:#23408c; --g19:#2f7d6d; --g20:#9a5b10; --g21:#7a3f8f; --g22:#41607a;
+  --shadow:0 1px 2px rgba(23,32,59,.06),0 6px 18px rgba(23,32,59,.06);
+  --display:"Cormorant Garamond","Iowan Old Style",Georgia,serif;
+  --body:"Instrument Sans",-apple-system,"Segoe UI",Roboto,sans-serif;
+  --deva:"Tiro Devanagari Hindi","Noto Serif Devanagari",serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0e1325; --sheet:#161d35; --ink:#e7ebf7; --muted:#9ca6c4; --line:#2a3456;
+    --indigo:#9db2ff; --marigold:#f0b04a;
+    --g17:#e08b74; --g18:#9db2ff; --g19:#6fd0bb; --g20:#f0b04a; --g21:#cf98e3; --g22:#8fb3cf;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 22px rgba(0,0,0,.25);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0e1325; --sheet:#161d35; --ink:#e7ebf7; --muted:#9ca6c4; --line:#2a3456;
+  --indigo:#9db2ff; --marigold:#f0b04a;
+  --g17:#e08b74; --g18:#9db2ff; --g19:#6fd0bb; --g20:#f0b04a; --g21:#cf98e3; --g22:#8fb3cf;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 22px rgba(0,0,0,.25);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none !important}
+html,body{margin:0}
+body{background:var(--paper);color:var(--ink);font:15px/1.55 var(--body);-webkit-font-smoothing:antialiased}
+button,input,select,textarea{font:inherit;color:inherit}
+a{color:var(--indigo)}
+:focus-visible{outline:2px solid var(--marigold);outline-offset:2px;border-radius:4px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+
+/* Header */
+header.top{padding:34px 0 0}
+.eyebrow{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;color:var(--muted);font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+.eyebrow .deva{font-family:var(--deva);text-transform:none;letter-spacing:0;font-size:18px;color:var(--marigold)}
+h1{font-family:var(--display);font-weight:600;font-size:clamp(34px,5vw,56px);line-height:1.02;margin:10px 0 12px;text-wrap:balance;letter-spacing:-.01em}
+h1 em{font-style:italic;color:var(--indigo);font-weight:600}
+.lede{max-width:68ch;color:var(--muted);margin:0}
+.lede strong{color:var(--ink);font-weight:600}
+.rule{height:5px;border-top:1px solid var(--marigold);border-bottom:2px solid var(--marigold);margin:24px 0 0;opacity:.8}
+.stats{display:flex;flex-wrap:wrap;gap:10px 34px;padding:18px 0;font-variant-numeric:tabular-nums}
+.stat b{display:block;font-family:var(--display);font-size:32px;line-height:1;font-weight:600}
+.gencount{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;padding:0 0 22px}
+.gc{background:var(--sheet);border:1px solid var(--line);border-top:4px solid var(--c);border-radius:10px;padding:12px 14px 12px;display:flex;flex-direction:column;gap:6px;cursor:pointer;text-align:left;font:inherit;color:inherit}
+.gc:hover{border-color:var(--c);box-shadow:var(--shadow)}
+.gc.none{border-top-color:var(--line);border-style:dashed;cursor:default;box-shadow:none}
+.gc .gn{font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.gc .gl{font-family:var(--display);font-size:19px;line-height:1.1;font-weight:600;text-wrap:balance;min-height:2.2em}
+.gc .row{display:flex;align-items:baseline;gap:14px;font-variant-numeric:tabular-nums}
+.gc .tot{font-family:var(--display);font-size:34px;line-height:1;font-weight:600}
+.gc .sd{font-size:13px;color:var(--muted);line-height:1.35}
+.gc .sd b{color:var(--ink);font-weight:600}
+.gc .bar{display:flex;height:5px;border-radius:3px;overflow:hidden;background:var(--line)}
+.gc .bar i{display:block;height:100%}
+.stat span{font-size:12.5px;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
+
+/* Nav */
+nav.tabs{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--line)}
+nav.tabs .wrap{display:flex;gap:4px;align-items:center;flex-wrap:wrap;padding-top:6px;padding-bottom:6px}
+.tab{background:none;border:0;padding:9px 14px;border-radius:999px;cursor:pointer;color:var(--muted);font-weight:500}
+.tab:hover{color:var(--ink);background:color-mix(in srgb,var(--indigo) 8%,transparent)}
+.tab[aria-selected="true"]{color:var(--sheet);background:var(--indigo)}
+.spacer{flex:1}
+.btn{border:1px solid var(--line);background:var(--sheet);padding:8px 14px;border-radius:8px;cursor:pointer;font-weight:500;display:inline-flex;align-items:center;gap:6px}
+.btn:hover{border-color:var(--indigo)}
+.btn.primary{background:var(--marigold);border-color:var(--marigold);color:#1b1306}
+.btn.primary:hover{filter:brightness(1.05)}
+.btn.small{padding:5px 10px;font-size:13px}
+.btn[disabled]{opacity:.5;cursor:not-allowed}
+
+main{padding:22px 0 60px}
+section.view{display:none}
+section.view.on{display:block}
+.viewhead{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;justify-content:space-between;margin-bottom:14px}
+h2{font-family:var(--display);font-weight:600;font-size:30px;margin:0;line-height:1.1;text-wrap:balance}
+.sub{color:var(--muted);font-size:14px;margin:2px 0 0}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--sheet)}
+.seg button{border:0;background:none;padding:6px 12px;cursor:pointer;color:var(--muted);font-size:13.5px}
+.seg button[aria-pressed="true"]{background:color-mix(in srgb,var(--indigo) 14%,transparent);color:var(--ink);font-weight:600}
+
+/* Legend */
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12.5px;color:var(--muted);margin:0 0 14px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+
+/* Tree */
+.treebox{overflow-x:auto;background:var(--sheet);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:var(--shadow)}
+.tree{position:relative}
+.tree svg{position:absolute;left:0;top:0;overflow:visible;pointer-events:none}
+.tree svg path{fill:none;stroke:var(--line);stroke-width:1.6}
+.node{position:absolute;width:224px;height:66px;display:flex;align-items:stretch;background:var(--sheet);border:1px solid var(--line);border-radius:10px;box-shadow:0 1px 0 rgba(0,0,0,.03);transition:border-color .15s,box-shadow .15s}
+.node:hover{border-color:var(--indigo);box-shadow:var(--shadow)}
+.node .stripe{width:5px;border-radius:9px 0 0 9px;flex:none}
+.node .main{flex:1;min-width:0;padding:7px 8px 6px 10px;cursor:pointer;background:none;border:0;text-align:left}
+.node .nm{font-weight:600;font-size:13.5px;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.node .mt{font-size:11.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.35}
+.node .tog{flex:none;width:30px;border:0;border-left:1px solid var(--line);background:none;cursor:pointer;color:var(--muted);font-size:11px;border-radius:0 9px 9px 0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;font-variant-numeric:tabular-nums}
+.node .tog:hover{color:var(--ink);background:color-mix(in srgb,var(--indigo) 7%,transparent)}
+.node.root{border-color:var(--g17);border-width:1.5px}
+.node.root .nm{white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.node.root .mt + .mt{display:none}
+.node.sel{border-color:var(--marigold);box-shadow:0 0 0 3px color-mix(in srgb,var(--marigold) 30%,transparent)}
+.late{font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:4px;padding:0 4px;margin-left:5px;vertical-align:1px}
+.colhead{position:absolute;top:0;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);width:224px;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.colhead b{color:var(--ink);font-weight:600}
+
+/* Outline */
+.outline{background:var(--sheet);border:1px solid var(--line);border-radius:14px;padding:10px 14px;box-shadow:var(--shadow)}
+.outline ul{list-style:none;margin:0;padding-left:18px;border-left:1px dashed var(--line)}
+.outline > ul{padding-left:0;border:0}
+.outline li{margin:2px 0}
+.orow{display:flex;align-items:center;gap:8px;padding:6px 6px;border-radius:8px}
+.orow:hover{background:color-mix(in srgb,var(--indigo) 6%,transparent)}
+.orow .dot{width:9px;height:9px;border-radius:50%;flex:none}
+.orow button.nmb{background:none;border:0;padding:0;cursor:pointer;text-align:left;font-weight:600}
+.orow .mt{color:var(--muted);font-size:12.5px}
+.orow .tg{border:0;background:none;cursor:pointer;color:var(--muted);width:22px;flex:none;padding:0}
+
+/* Members table */
+.filters{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:12px}
+.search{flex:1 1 240px;max-width:380px;padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:var(--sheet)}
+.chip{border:1px solid var(--line);background:var(--sheet);border-radius:999px;padding:5px 11px;font-size:13px;cursor:pointer;color:var(--muted)}
+.chip[aria-pressed="true"]{border-color:var(--indigo);color:var(--ink);background:color-mix(in srgb,var(--indigo) 10%,var(--sheet))}
+.tablebox{overflow-x:auto;background:var(--sheet);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}
+table{border-collapse:collapse;width:100%;min-width:780px;font-size:14px}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600;background:color-mix(in srgb,var(--indigo) 4%,var(--sheet));position:sticky;top:0}
+tbody tr{cursor:pointer}
+tbody tr:hover td{background:color-mix(in srgb,var(--indigo) 5%,transparent)}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+td .gen{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+td .gen i{width:8px;height:8px;border-radius:2px;display:inline-block}
+.empty{padding:30px;text-align:center;color:var(--muted)}
+
+/* Dates */
+.grid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:20px}
+@media (max-width:880px){.grid2{grid-template-columns:1fr}}
+.card{background:var(--sheet);border:1px solid var(--line);border-radius:14px;padding:18px 18px;box-shadow:var(--shadow)}
+.card h3{font-family:var(--display);font-size:22px;margin:0 0 10px;font-weight:600}
+.evt{display:grid;grid-template-columns:58px 1fr;gap:12px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line)}
+.evt:last-child{border-bottom:0}
+.cal{text-align:center;border:1px solid var(--line);border-radius:8px;padding:3px 0 4px;line-height:1.1;font-variant-numeric:tabular-nums}
+.cal b{display:block;font-family:var(--display);font-size:22px}
+.cal span{font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.evt .who{font-weight:600;background:none;border:0;padding:0;cursor:pointer;text-align:left}
+.evt .what{font-size:12.5px;color:var(--muted)}
+.kind{font-size:10.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;border-radius:4px;padding:1px 6px;margin-right:6px}
+.kind.b{background:color-mix(in srgb,var(--g18) 14%,transparent);color:var(--g18)}
+.kind.a{background:color-mix(in srgb,var(--marigold) 18%,transparent);color:var(--marigold)}
+.kind.r{background:color-mix(in srgb,var(--muted) 16%,transparent);color:var(--muted)}
+.months{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.month h4{margin:0 0 6px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.month ol{list-style:none;margin:0;padding:0;font-size:13.5px}
+.month li{display:flex;gap:8px;padding:3px 0;align-items:baseline}
+.month li .d{font-variant-numeric:tabular-nums;color:var(--muted);width:20px;text-align:right;flex:none}
+.month li button{background:none;border:0;padding:0;cursor:pointer;text-align:left}
+.note{border-left:3px solid var(--marigold);background:color-mix(in srgb,var(--marigold) 9%,var(--sheet));padding:10px 14px;border-radius:0 8px 8px 0;font-size:14px;margin:0 0 14px}
+
+/* Heritage */
+.lineage{display:flex;flex-direction:column;gap:0;margin:8px 0 0}
+.lin{display:grid;grid-template-columns:72px 76px 1fr;gap:14px;align-items:start;padding:10px 0;border-bottom:1px solid var(--line)}
+.lin:last-child{border-bottom:0}
+.lin .g{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.lin .y{font-family:var(--display);font-size:22px;font-variant-numeric:tabular-nums;line-height:1.1}
+.lin .n{font-weight:600}
+.lin .r{font-size:13px;color:var(--muted)}
+.lin.gap .n{color:var(--muted);font-weight:500;font-style:italic}
+.lin.here .n{color:var(--g17)}
+.story{display:flex;flex-direction:column}
+.st{display:grid;grid-template-columns:92px 1fr;gap:18px;padding:16px 0;border-top:1px solid var(--line)}
+.st:first-child{border-top:0;padding-top:4px}
+.st .yr{font-family:var(--display);font-size:26px;line-height:1;font-weight:600;color:var(--marigold);font-variant-numeric:tabular-nums}
+.st .yr small{display:block;font-family:var(--body);font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-top:6px;line-height:1.3}
+.st h4{font-family:var(--display);font-size:22px;font-weight:600;margin:0 0 6px;line-height:1.15;text-wrap:balance}
+.st p{margin:0 0 8px;max-width:64ch}
+.st p:last-child{margin-bottom:0}
+.storyintro{font-size:16.5px;max-width:64ch;margin:0 0 8px;color:var(--ink)}
+@media (max-width:520px){.st{grid-template-columns:1fr;gap:6px}}
+.prose p{max-width:66ch;margin:0 0 12px}
+.prose p:last-child{margin-bottom:0}
+
+/* Drawer */
+.scrim{position:fixed;inset:0;background:rgba(10,14,28,.38);z-index:40;display:none}
+.scrim.on{display:block}
+aside.drawer{position:fixed;top:0;right:0;height:100%;width:min(440px,100%);background:var(--sheet);border-left:1px solid var(--line);z-index:50;transform:translateX(105%);transition:transform .22s ease;display:flex;flex-direction:column;box-shadow:-10px 0 30px rgba(0,0,0,.12)}
+aside.drawer.on{transform:none}
+.dhead{padding:20px 22px 14px;border-bottom:1px solid var(--line);display:flex;gap:12px;align-items:flex-start}
+.dhead h3{font-family:var(--display);font-size:28px;line-height:1.05;margin:2px 0 4px;font-weight:600;text-wrap:balance}
+.dhead .gl{font-size:12px;letter-spacing:.07em;text-transform:uppercase}
+.x{margin-left:auto;border:0;background:none;font-size:22px;line-height:1;cursor:pointer;color:var(--muted);padding:4px 6px;border-radius:6px}
+.dbody{padding:16px 22px 22px;overflow-y:auto;flex:1}
+dl.facts{display:grid;grid-template-columns:128px 1fr;gap:8px 14px;margin:0 0 18px;font-size:14px}
+dl.facts dt{color:var(--muted);font-size:13px}
+dl.facts dd{margin:0}
+.dbody h4{font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin:16px 0 8px}
+.links{display:flex;flex-wrap:wrap;gap:6px}
+.plink{border:1px solid var(--line);background:var(--sheet);border-radius:999px;padding:4px 10px;font-size:13px;cursor:pointer}
+.plink:hover{border-color:var(--indigo)}
+.chain{font-size:13px;color:var(--muted);line-height:1.8}
+.chain button{background:none;border:0;padding:0;cursor:pointer;color:var(--indigo);text-decoration:underline;text-underline-offset:2px;font-size:13px}
+.dfoot{padding:12px 22px;border-top:1px solid var(--line);display:flex;gap:8px;flex-wrap:wrap}
+.notes{white-space:pre-wrap;font-size:14px;max-width:60ch}
+
+/* Form modal */
+.modal{position:fixed;inset:0;z-index:60;display:none;align-items:flex-start;justify-content:center;padding:4vh 16px;overflow-y:auto;background:rgba(10,14,28,.45)}
+.modal.on{display:flex}
+.mbox{background:var(--sheet);border:1px solid var(--line);border-radius:14px;width:min(640px,100%);box-shadow:0 20px 60px rgba(0,0,0,.25)}
+.mbox header{padding:18px 22px 6px;display:flex;align-items:flex-start}
+.mbox h3{font-family:var(--display);font-size:26px;margin:0;font-weight:600}
+form.f{padding:8px 22px 20px;display:grid;grid-template-columns:1fr 1fr;gap:12px 14px}
+form.f .full{grid-column:1/-1}
+@media (max-width:560px){form.f{grid-template-columns:1fr}}
+form.f label{display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--muted);font-weight:500}
+form.f input,form.f select,form.f textarea{padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink);font-size:14.5px}
+form.f textarea{min-height:74px;resize:vertical}
+form.f fieldset{grid-column:1/-1;border:1px solid var(--line);border-radius:10px;padding:10px 12px 12px;display:grid;grid-template-columns:1fr 1fr;gap:10px 12px;margin:0}
+form.f fieldset .full{grid-column:1/-1}
+form.f fieldset{min-width:0}
+form.f input:not([type=checkbox]),form.f select,form.f textarea{width:100%;min-width:0}
+form.f .hint{grid-column:1/-1;font-size:12.5px;color:var(--muted);margin:-2px 0 0}
+@media (max-width:560px){form.f fieldset{grid-template-columns:1fr}}
+form.f legend{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:0 4px}
+.check{flex-direction:row !important;align-items:center;gap:8px !important;color:var(--ink) !important}
+.formmsg{grid-column:1/-1;font-size:13.5px;min-height:1.2em;margin:0}
+.formmsg.err{color:#b3261e}
+:root[data-theme="dark"] .formmsg.err{color:#ff8a80}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .formmsg.err{color:#ff8a80}}
+.helpband{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;justify-content:space-between;background:var(--sheet);border:1px solid var(--line);border-left:4px solid var(--marigold);border-radius:10px;padding:12px 16px;margin:0 0 18px}
+.helpband p{margin:0;max-width:72ch;font-size:14.5px}
+.pick{padding:6px 22px 22px}
+.pick input{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--paper);font-size:15px}
+.picklist{list-style:none;margin:10px 0 0;padding:0;max-height:50vh;overflow-y:auto;border:1px solid var(--line);border-radius:10px}
+.picklist li button{display:flex;width:100%;justify-content:space-between;gap:10px;text-align:left;background:none;border:0;border-bottom:1px solid var(--line);padding:10px 12px;cursor:pointer}
+.picklist li:last-child button{border-bottom:0}
+.picklist li button:hover,.picklist li button:focus-visible{background:color-mix(in srgb,var(--indigo) 7%,transparent)}
+.picklist .sub{font-size:12.5px}
+.pickfoot{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-top:14px}
+.upd{font-size:12.5px;color:var(--muted);margin-top:16px}
+.recent li{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px solid var(--line);font-size:14px}
+.recent li:last-child{border-bottom:0}
+.recent ol{list-style:none;margin:0;padding:0}
+.factions{grid-column:1/-1;display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap}
+
+footer{border-top:1px solid var(--line);padding:18px 0 40px;color:var(--muted);font-size:13px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between}
+#syncnote{font-size:13px}
+
+@media (prefers-reduced-motion: reduce){*{transition:none !important}}
+@media (max-width:520px){.stats{gap:10px 22px}.stat b{font-size:26px}dl.facts{grid-template-columns:104px 1fr}.lin{grid-template-columns:56px 64px 1fr;gap:10px}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="eyebrow"><span class="deva">माधो निवास</span><span>Madho Niwas · Jaipur · Saligram Parivaar · Shura Shah Parivaar</span></div>
+    <h1>The family of <em>Rao Bahadur Madho Prasad Gupta</em></h1>
+    <p class="lede">Born at Nasirabad on <strong>05.03.1894</strong>, second son of Moonalal Ji and husband of <strong>Saroj Devi</strong>, he retired in 1951 as the <strong>first Registrar of the Rajasthan High Court</strong>. This register traces everyone descended from him, generation by generation, and grows as the family adds new members, marriages and dates.</p>
+    <div class="rule" aria-hidden="true"></div>
+    <div class="stats" id="stats"></div>
+    <div class="gencount" id="gencount" aria-label="Members in each generation"></div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Sections">
+  <div class="wrap" role="tablist">
+    <button class="tab" role="tab" data-view="tree" id="tab-tree">Family tree</button>
+    <button class="tab" role="tab" data-view="members" id="tab-members">Members</button>
+    <button class="tab" role="tab" data-view="dates" id="tab-dates">Birthdays &amp; anniversaries</button>
+    <button class="tab" role="tab" data-view="heritage" id="tab-heritage">Family history</button>
+    <span class="spacer"></span>
+    <button class="btn" id="addBtn" hidden>+ Add a member</button>
+    <button class="btn primary" id="meBtn" hidden>Update my details</button>
+  </div>
+</nav>
+
+<main>
+  <div class="wrap">
+
+    <div class="helpband" id="helpband" hidden>
+      <p id="helptext"></p>
+      <button class="btn primary" id="meBtn2" hidden>Update my details</button>
+    </div>
+
+    <section class="view" id="view-tree" aria-labelledby="tab-tree">
+      <div class="viewhead">
+        <div>
+          <h2>Family tree</h2>
+          <p class="sub">Select a name to see details. Use the count on the right of a card to fold or unfold a branch.</p>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+          <div class="seg" role="group" aria-label="Tree layout">
+            <button id="lay-tree" aria-pressed="true">Chart</button>
+            <button id="lay-outline" aria-pressed="false">List</button>
+          </div>
+          <button class="btn small" id="expandAll">Unfold all</button>
+          <button class="btn small" id="collapseAll">Fold to children</button>
+        </div>
+      </div>
+      <div class="legend" id="legend"></div>
+      <div class="treebox" id="treebox"><div class="tree" id="tree"></div></div>
+      <div class="outline" id="outline" hidden></div>
+    </section>
+
+    <section class="view" id="view-members" aria-labelledby="tab-members">
+      <div class="viewhead">
+        <div>
+          <h2>Members</h2>
+          <p class="sub" id="memcount"></p>
+        </div>
+      </div>
+      <div class="filters">
+        <input class="search" id="q" type="search" placeholder="Search name, place or spouse" aria-label="Search members">
+        <div id="genchips" style="display:flex;gap:6px;flex-wrap:wrap"></div>
+      </div>
+      <div class="card recent" id="recentbox" hidden style="margin-bottom:16px">
+        <h3>Recent updates by the family</h3>
+        <ol id="recent"></ol>
+      </div>
+      <div class="tablebox">
+        <table>
+          <thead><tr><th>Name</th><th>Generation</th><th>Born</th><th>Birthplace</th><th>Lives in</th><th>Spouse</th><th>Son / daughter of</th></tr></thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="view" id="view-dates" aria-labelledby="tab-dates">
+      <div class="viewhead">
+        <div>
+          <h2>Birthdays &amp; anniversaries</h2>
+          <p class="sub">Birthdays, marriage anniversaries and remembrance days across the family.</p>
+        </div>
+      </div>
+      <div id="annivnote"></div>
+      <div class="grid2">
+        <div class="card">
+          <h3>Coming up</h3>
+          <div id="upcoming"></div>
+        </div>
+        <div class="card">
+          <h3>Through the year</h3>
+          <div class="months" id="months"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="view" id="view-heritage" aria-labelledby="tab-heritage">
+      <div class="viewhead">
+        <div>
+          <h2>Family history</h2>
+          <p class="sub">Saligram Parivaar · Shura Shah Parivaar of Manoharpur</p>
+        </div>
+      </div>
+      <div class="grid2" style="grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)">
+        <div class="card">
+          <p class="storyintro">The family of Madho Niwas belongs to the Saligram Parivaar, a branch of the Shura Shah Parivaar of Manoharpur. Its story begins five centuries ago.</p>
+          <div class="story">
+            <article class="st">
+              <div class="yr">1500<small>Manoharpur</small></div>
+              <div>
+                <h4>Shura Shah Ji</h4>
+                <p>In or about 1500 AD, Shura Shah Ji was born at Manoharpur, about 42 km from Jaipur. He rose to become the Dewan, or Prime Minister, of Manoharpur.</p>
+                <p>He had three sons, Udai Karan Ji, Aas Karan Ji and Madho Karan Ji. The three brothers married three sisters of Amarsar: Pokhari Devi, Rama Devi and Tulsi Devi.</p>
+              </div>
+            </article>
+            <article class="st">
+              <div class="yr">1562<small>Samvat 1619 · Bhatner</small></div>
+              <div>
+                <h4>The battle of Bhatner</h4>
+                <p>In 1562 the three brothers fought bravely in the battle of Bhatner and were killed. Their bodies were carried back to Manoharpur on their horses.</p>
+                <p>At Manoharpur their wives committed sati, and three chhatris were raised in their memory. The family's Sati Mandir at Manoharpur keeps that memory today.</p>
+              </div>
+            </article>
+            <article class="st">
+              <div class="yr">1868<small>Manoharpur to Nasirabad</small></div>
+              <div>
+                <h4>From Manoharpur to Moonalal Ji</h4>
+                <p>Over the next three centuries the family moved from Manoharpur to Jaipur, with Seth Gumaniram Ji (b. 1748), and on to Nasirabad, with Saligram Ji (b. 1798), who gives the Saligram Parivaar its name.</p>
+                <p>The line of Shura Shah Ji leads to Moonalal Ji, born in 1868, Head Clerk of the BB&amp;CI Railways. He had four sons and three daughters.</p>
+              </div>
+            </article>
+            <article class="st">
+              <div class="yr">1894<small>Nasirabad · Ajmer · Jaipur</small></div>
+              <div>
+                <h4>Rao Bahadur Madho Prasad Gupta</h4>
+                <p>Madho Prasad Gupta, Moonalal Ji's second son, was born at Nasirabad on 05.03.1894. He took his B.A. in 1914 and his LL.B. in 1926, and practised law at Ajmer until 1929, when he joined the Jaipur State Judicial Service as a Munsif.</p>
+                <p>He was honoured with the title of Rao Bahadur, and in 1951 he retired as the first Registrar of the Rajasthan High Court. He and Saroj Devi had four sons and three daughters.</p>
+              </div>
+            </article>
+            <article class="st">
+              <div class="yr">1926<small>Nasirabad · Jaipur</small></div>
+              <div>
+                <h4>Justice Dwarka Prasad Gupta</h4>
+                <p>Dwarka Prasad Gupta, the third son of Rao Bahadur, was born in 1926 and took his LL.B. in 1946. He was elevated as a Judge of the Rajasthan High Court in 1973 and as its Chief Justice in 1986.</p>
+                <p>His second son, Aruneshwar Gupta, Senior Advocate in the Supreme Court of India, founded the Shri Shurashah Manoharpur Trust in 2020 to record the history and lineage of the Parivaar.</p>
+              </div>
+            </article>
+            <article class="st">
+              <div class="yr">Today<small>India &amp; abroad</small></div>
+              <div>
+                <h4>A family across the world</h4>
+                <p>Five centuries after Shura Shah Ji, the Shura Shah Parivaar is spread across India and around the globe, from Jaipur, Delhi and Lucknow to the United States and Singapore.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:20px;min-width:0">
+          <div class="card">
+            <h3>Line of descent</h3>
+            <div class="lineage" id="lineage"></div>
+            <p class="sub" style="margin-top:10px">Numbers count Shura Shah Ji as generation 1 of the family register. Years before 1850 are approximate.</p>
+          </div>
+          <div class="card prose">
+            <h3>Moonalal Ji's children</h3>
+            <p>Four sons: Gordhanlal (1892), Madho Prasad (1894), Rambilas (1896) and Harbilas (1900). Three daughters: Ratni Devi (1906), Suraj Devi (1908) and Chanda Devi (1910).</p>
+          </div>
+          <div class="card prose">
+            <h3>Shri Shurashah Manoharpur Trust</h3>
+            <p>Constituted at New Delhi on 20 February 2020 to collect and record the true history, ancestry and lineage of the Shurashah Parivaar across India and the world, to bring its members together, and to maintain the Sati Mandir at Manoharpur.</p>
+            <p class="note" style="margin:12px 0 0">Coming next: the full Shura Shah Parivaar tree, joining the Saligram, Mundawar, Surakha, Lond and other branches.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Madho Niwas · Descendants of Rao Bahadur Madho Prasad Gupta</span>
+    <span id="syncnote">Showing the family register.</span>
+  </div>
+</footer>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-hidden="true" aria-labelledby="d-name">
+  <div class="dhead">
+    <div>
+      <div class="gl" id="d-gen"></div>
+      <h3 id="d-name"></h3>
+      <div class="sub" id="d-rel"></div>
+    </div>
+    <button class="x" id="d-close" aria-label="Close details">×</button>
+  </div>
+  <div class="dbody" id="d-body"></div>
+  <div class="dfoot" id="d-foot"></div>
+</aside>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="m-title">
+  <div class="mbox">
+    <header><h3 id="m-title">Add a family member</h3><button class="x" id="m-close" aria-label="Close form">×</button></header>
+    <form class="f" id="form" novalidate>
+      <fieldset>
+        <legend>Family member</legend>
+        <label class="full">Full name *<input id="f-name" required maxlength="120" autocomplete="off"></label>
+        <label>Son or daughter *<select id="f-gender"><option value="m">Son</option><option value="f">Daughter</option></select></label>
+        <label>Of (father / mother) *<select id="f-parent"></select></label>
+        <label class="full">Name before marriage (for daughters)<input id="f-maiden" maxlength="120" placeholder="e.g. Krishna Gupta"></label>
+        <label>Date of birth<input id="f-born" placeholder="DD.MM.YYYY" maxlength="10" inputmode="decimal"></label>
+        <label>Place of birth<input id="f-birthplace" maxlength="80"></label>
+        <label>Lives in<input id="f-lives" maxlength="80" placeholder="City, country"></label>
+        <label>Gotra / sur name<input id="f-surname" maxlength="60"></label>
+        <label class="check"><input type="checkbox" id="f-deceased"> No longer with us</label>
+        <label>Date of passing<input id="f-died" placeholder="DD.MM.YYYY" maxlength="10" inputmode="decimal"></label>
+      </fieldset>
+      <fieldset>
+        <legend>Husband / wife</legend>
+        <label class="full">Name<input id="f-spouse" maxlength="120"></label>
+        <label>Family (sur name)<input id="f-spouseFamily" maxlength="60" placeholder="e.g. Agarwal"></label>
+        <label>Home town<input id="f-spousePlace" maxlength="80"></label>
+        <label>Date of birth<input id="f-spouseBorn" placeholder="DD.MM.YYYY" maxlength="10" inputmode="decimal"></label>
+        <label>Date of passing (if any)<input id="f-spouseDied" placeholder="DD.MM.YYYY" maxlength="10" inputmode="decimal"></label>
+        <label>Date of marriage (anniversary)<input id="f-anniv" placeholder="DD.MM.YYYY" maxlength="10" inputmode="decimal"></label>
+        <label>Place of marriage<input id="f-marriagePlace" maxlength="80"></label>
+      </fieldset>
+      <p class="hint">Write dates as day.month.year, for example 21.10.1919. If you know only the year, write the year.</p>
+      <label class="full">Notes<textarea id="f-notes" maxlength="1000" placeholder="Profession, achievements, where they moved, memories"></textarea></label>
+      <p class="formmsg" id="f-msg" role="status"></p>
+      <div class="factions">
+        <button type="button" class="btn" id="f-cancel">Cancel</button>
+        <button type="submit" class="btn primary" id="f-save">Save</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal" id="picker" role="dialog" aria-modal="true" aria-labelledby="p-title">
+  <div class="mbox">
+    <header><h3 id="p-title">Find your name</h3><button class="x" id="p-close" aria-label="Close">×</button></header>
+    <div class="pick">
+      <p class="sub" style="margin:0 0 10px">Type your name, choose it, then fill in your dates and your husband's or wife's details. You can also update a parent or grandparent the same way.</p>
+      <input id="p-q" type="search" placeholder="Type a name" aria-label="Search for your name" autocomplete="off">
+      <ul class="picklist" id="p-list"></ul>
+      <div class="pickfoot">
+        <span class="sub">Not in the list?</span>
+        <button class="btn" id="p-new">Add myself as a new member</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+"use strict";
+const PUBLIC = true;
+const FAMILY_SITE = "https://claude.ai/artifact/1GWf3D6m8ynFiDhrmTxiPN";
+const SNAPSHOT = {"chandralekha": {"anniversary": "", "birthplace": "Sikar", "born": "18.11.1940", "deceased": false, "died": "", "gender": "f", "lives": "Delhi", "maiden": "Chandralekha Gupta", "marriagePlace": "Jaipur", "name": "Chandralekha Jindal", "notes": "", "parent": "shiv-prasad", "spouse": "R.S.Jindal", "spouseBorn": "", "spouseDied": "", "spouseFamily": "Jindal", "spousePlace": "Samalkha, Haryana", "surname": "", "updatedAt": "2026-11-21T07:06:42.835Z"}, "rajeshwar": {"anniversary": "", "birthplace": "Ajmer", "born": "15.10.1942", "deceased": false, "died": "", "gender": "m", "lives": "Jaipur", "maiden": "", "marriagePlace": "", "name": "Rajeshwar Prasad Gupta", "notes": "", "parent": "shiv-prasad", "spouse": "Manju Gupta", "spouseBorn": "", "spouseDied": "", "spouseFamily": "", "spousePlace": "Ajmer", "surname": "Goyal", "updatedAt": "2026-11-21T07:10:00.369Z"}};
+/* ---------- Family register: descendants of Rao Bahadur Madho Prasad Gupta ---------- */
+const ROOT = "madho-prasad";
+const REGISTER = [
+ {id:"madho-prasad",gender:"m",name:"Rao Bahadur Madho Prasad Gupta",parent:null,born:"05.03.1894",birthplace:"Nasirabad",deceased:true,spouse:"Saroj Devi",notes:"B.A. (1914), LL.B. (1926). Practised law at Ajmer until 1929, when he joined the Jaipur State Judicial Service as Munsif. Honoured with the title of Rao Bahadur. Retired in 1951 as the first Registrar of the Rajasthan High Court.\nSecond son of Moonalal Ji (Head Clerk, BB&CI Railways). Saligram Parivaar, Shura Shah Parivaar."},
+ {id:"shiv-prasad",gender:"m",name:"Shiv Prasad Gupta",parent:"madho-prasad",born:"21.12.1916",birthplace:"Ajmer",deceased:true,spousePlace:"Ajmer"},
+ {id:"hari-prasad",gender:"m",name:"Hari Prasad Gupta",parent:"madho-prasad",born:"21.10.1919",birthplace:"Nasirabad",lives:"Jaipur",spouse:"Sarla Devi",spousePlace:"Jodhpur"},
+ {id:"krishna-jain",gender:"f",name:"Krishna Jain",parent:"madho-prasad",born:"24.09.1923",birthplace:"Nasirabad",deceased:true,spouse:"Sumer Chand Jain",spouseFamily:"Jain",spousePlace:"Nasirabad",maiden:"Krishna Gupta"},
+ {id:"dwarka-prasad",gender:"m",name:"Justice Dwarka Prasad Gupta",parent:"madho-prasad",born:"21.07.1926",died:"18.06.1993",deceased:true,birthplace:"Nasirabad",spouse:"Shail Gupta",spouseFamily:"Bansal",spousePlace:"Agra",notes:"Third son of Rao Bahadur Madho Prasad Gupta. LL.B. (1946). Elevated as Judge of the Rajasthan High Court in 1973 and as Chief Justice in 1986."},
+ {id:"haripyari",gender:"f",name:"Haripyari Gupta",parent:"madho-prasad",born:"07.01.1929",birthplace:"Ajmer",lives:"Jaipur",spouse:"Dr. M.L. Gupta",spouseFamily:"Gupta",spousePlace:"Jaipur",maiden:"Haripyari Gupta"},
+ {id:"jwala-prasad",gender:"m",name:"Jwala Prasad Gupta",parent:"madho-prasad",born:"03.05.1932",birthplace:"Jaipur",lives:"USA",spouse:"Meena",spousePlace:"Ratlam",notes:"Moved to the USA in 1974."},
+ {id:"sarla-sanghi",gender:"f",name:"Sarla Sanghi",parent:"madho-prasad",born:"03.10.1934",birthplace:"Jaipur",lives:"Bangalore",spouse:"G.R.C. Sanghi",spouseFamily:"Sanghi",spousePlace:"Mhow",maiden:"Sarla Gupta"},
+
+ {id:"chandralekha",gender:"f",name:"Chandralekha Jindal",parent:"shiv-prasad",born:"18.11.1940",birthplace:"Sikar",lives:"Delhi",spouseFamily:"Jindal",maiden:"Chandralekha Gupta"},
+ {id:"rajeshwar",gender:"m",name:"Rajeshwar Prasad Gupta",parent:"shiv-prasad",born:"15.10.1942",birthplace:"Ajmer",lives:"Jaipur"},
+ {id:"rama-agarwal",gender:"f",name:"Rama Agarwal",parent:"shiv-prasad",born:"06.10.1944",birthplace:"Ajmer",lives:"Jaipur",spouseFamily:"Agarwal",maiden:"Rama Gupta"},
+ {id:"kamaleshwar",gender:"m",name:"Kamaleshwar Gupta (Kam)",parent:"hari-prasad",born:"13.12.1944",birthplace:"Delhi",lives:"Chicago, USA",notes:"Moved to the USA in 1967."},
+ {id:"bimleshwar",gender:"m",name:"Bimleshwar Gupta (Bim)",parent:"hari-prasad",born:"17.05.1946",birthplace:"Jaipur",lives:"USA",notes:"Moved to the USA in 1969."},
+ {id:"amareshwar",gender:"m",name:"Amareshwar Gupta",parent:"dwarka-prasad",born:"22.04.1953",birthplace:"Agra",lives:"Jaipur"},
+ {id:"aruneshwar",gender:"m",name:"Aruneshwar Gupta",parent:"dwarka-prasad",born:"10.01.1955",birthplace:"Agra",lives:"Delhi",spouse:"Padma",spouseFamily:"Agarwal",spousePlace:"Jaipur",notes:"Second son of Justice D.P. Gupta. Senior Advocate, Supreme Court of India. Moved to Delhi in 1976. Settlor of the Shri Shurashah Manoharpur Trust (2020)."},
+ {id:"atul",gender:"m",name:"Dr. Atul Gupta",parent:"dwarka-prasad",born:"09.01.1961",birthplace:"Agra",lives:"Jaipur",spouse:"Pramila"},
+ {id:"alka-das",gender:"f",name:"Alka Das",parent:"dwarka-prasad",born:"13.01.1964",birthplace:"Agra",lives:"Lucknow",spouse:"Akhilesh Das Gupta",spouseFamily:"Das",maiden:"Alka Gupta"},
+ {id:"anita-agarwal",gender:"f",name:"Anita Agarwal",parent:"jwala-prasad",born:"02.02.1957",birthplace:"Jaipur",lives:"USA",spouse:"Rahul Agarwal",spouseFamily:"Agarwal",maiden:"Anita Gupta",notes:"Moved to the USA in 1974."},
+ {id:"akhil",gender:"m",name:"Akhil Gupta",parent:"jwala-prasad",born:"21.03.1959",birthplace:"Bilaspur",lives:"USA",spouse:"Poornima",notes:"Moved to the USA in 1974."},
+
+ {id:"alpana",gender:"f",name:"Alpana Gupta",parent:"rajeshwar",born:"08.06.1969",birthplace:"Ajmer",lives:"Jaipur",spouse:"Vijay"},
+ {id:"ashish",gender:"m",name:"Ashish Gupta",parent:"rajeshwar",born:"06.06.1972",birthplace:"Jaipur",lives:"Jaipur",spouse:"Pooja",spouseFamily:"Bansal",spousePlace:"Kota"},
+ {id:"pankaj",gender:"m",name:"Pankaj Gupta",parent:"kamaleshwar",born:"11.03.1976",birthplace:"Elgin, Chicago",lives:"USA"},
+ {id:"parag",gender:"m",name:"Parag Gupta",parent:"kamaleshwar",born:"27.02.1986",birthplace:"Elgin, Chicago",lives:"USA"},
+ {id:"anjali",gender:"f",name:"Anjali Gupta",parent:"bimleshwar",born:"02.03.1978",birthplace:"Denver",lives:"USA"},
+ {id:"neeraj",gender:"m",name:"Neeraj Gupta",parent:"bimleshwar",born:"19.12.1980",birthplace:"Denver",lives:"USA"},
+ {id:"aditi",gender:"f",name:"Aditi Gupta",parent:"amareshwar",born:"04.12.1983",birthplace:"Jaipur",lives:"Jaipur"},
+ {id:"nandita",gender:"f",name:"Nandita Gupta",parent:"amareshwar",born:"28.12.1986",birthplace:"Jaipur",lives:"Jaipur"},
+ {id:"chetanya",gender:"m",name:"Chetanya Gupta",parent:"amareshwar",born:"10.11.1990",birthplace:"Jaipur",lives:"Jaipur"},
+ {id:"shashwat",gender:"m",name:"Shashwat Gupta",parent:"aruneshwar",born:"24.03.1983",birthplace:"Jaipur",lives:"Singapore",spouse:"Pallavi",spouseFamily:"Malviya",spousePlace:"Delhi"},
+ {id:"shitij",gender:"m",name:"Shitij Gupta",parent:"aruneshwar",born:"02.12.1987",birthplace:"Jaipur",lives:"Delhi",spouse:"Reshika",spouseFamily:"Bagaria",spousePlace:"Dibrugarh"},
+ {id:"purva",gender:"f",name:"Purva Gupta",parent:"atul",born:"20.06.1989",birthplace:"Jaipur",lives:"Jaipur"},
+ {id:"shriya",gender:"f",name:"Shriya Gupta",parent:"atul",born:"24.06.1992",birthplace:"Jaipur",lives:"Jaipur"},
+ {id:"diya",gender:"f",name:"Diya Gupta",parent:"akhil",born:"11.04.2003",birthplace:"Delhi",lives:"USA"},
+
+ {id:"nandini",gender:"f",name:"Nandini Gupta",parent:"ashish",born:"19.01.2001",birthplace:"Jaipur",lives:"Jaipur"},
+ {id:"naman",gender:"m",name:"Naman Gupta",parent:"ashish",born:"20.03.2003",birthplace:"Jaipur",lives:"Jaipur"}
+];
+
+const LINEAGE = [
+ {g:1,y:"1500",n:"Shura Shah Ji",r:"Dewan (Prime Minister) of Manoharpur"},
+ {g:2,y:"1562",n:"Udai Karan Ji, Aas Karan Ji, Madho Karan Ji",r:"Fell in the battle of Bhatner (Samvat 1619)"},
+ {g:"3–7",y:"",n:"These generations are only partly recorded",r:"",gap:true},
+ {g:8,y:"1694",n:"Seth Jaluram Ji",r:"Manoharpur"},
+ {g:9,y:"1718",n:"Seth Kshem Karan Ji",r:"Manoharpur"},
+ {g:10,y:"1748",n:"Seth Gumaniram Ji",r:"Moved to Jaipur"},
+ {g:11,y:"1770",n:"Seth Mansukh Ji",r:""},
+ {g:12,y:"1794",n:"Seth Sukhram Ji",r:""},
+ {g:13,y:"1798",n:"Saligram Ji",r:"Moved to Nasirabad · founder of the Saligram Parivaar"},
+ {g:14,y:"1815",n:"Jagannathdas Ji",r:"Jaipur"},
+ {g:15,y:"1837",n:"Prahalad Das Ji",r:"Nasirabad"},
+ {g:16,y:"1868",n:"Moonalal Ji",r:"Nasirabad · Head Clerk, BB&CI Railways · 4 sons, 3 daughters"},
+ {g:17,y:"1894",n:"Rao Bahadur Madho Prasad Gupta",r:"Nasirabad · First Registrar, Rajasthan High Court",here:true}
+];
+
+const ROOT_GEN = 17;
+const GEN_LABEL = {17:"Rao Bahadur & Saroj Devi",18:"Sons & daughters",19:"Grandsons & granddaughters",20:"Great-grandsons & great-granddaughters",21:"Great-great-grandsons & granddaughters"};
+const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+const MON3 = MONTHS.map(m=>m.slice(0,3));
+
+/* ---------- State ---------- */
+let overlay = SNAPSHOT;          // id -> doc data from the shared database
+let people = {};           // merged id -> record
+let kids = {};             // id -> [child ids]
+let gens = {};             // id -> register generation number
+const collapsed = new Set();
+let layoutMode = window.matchMedia("(max-width:720px)").matches ? "outline" : "tree";
+let selected = null;
+let db = null, userCap = null, canWrite = false, writeBlocked = false, dbChecked = false, myId = null;
+let genFilter = null;
+
+/* ---------- Helpers ---------- */
+function el(tag, attrs, ...children){
+  const n = document.createElement(tag);
+  if (attrs) for (const [k,v] of Object.entries(attrs)){
+    if (v == null || v === false) continue;
+    if (k === "class") n.className = v;
+    else if (k === "text") n.textContent = v;
+    else if (k.startsWith("on")) n.addEventListener(k.slice(2), v);
+    else if (k === "style") n.setAttribute("style", v);
+    else n.setAttribute(k, v === true ? "" : v);
+  }
+  for (const c of children.flat()){
+    if (c == null || c === false) continue;
+    n.append(c instanceof Node ? c : document.createTextNode(String(c)));
+  }
+  return n;
+}
+const str = v => (typeof v === "string" ? v.trim() : "");
+function parseDate(s){
+  s = str(s); if (!s) return null;
+  let m = s.match(/^(\d{1,2})[.\/-](\d{1,2})[.\/-](\d{4})$/);
+  if (m){ const d=+m[1], mo=+m[2], y=+m[3]; if (mo>=1&&mo<=12&&d>=1&&d<=31) return {d,m:mo,y}; return null; }
+  m = s.match(/^(\d{4})$/); if (m) return {y:+m[1]};
+  return null;
+}
+function fmtDate(s){
+  const p = parseDate(s); if (!p) return str(s) || "";
+  return p.d ? dmy(p) : String(p.y);
+}
+function dmy(p){ return `${String(p.d).padStart(2,"0")}.${String(p.m).padStart(2,"0")}.${p.y}`; }
+function isoToDmy(iso){ const d = new Date(iso); if (isNaN(d)) return ""; return dmy({d:d.getDate(),m:d.getMonth()+1,y:d.getFullYear()}); }
+function shortDate(s){
+  const p = parseDate(s); if (!p) return "";
+  return p.d ? dmy(p) : String(p.y);
+}
+function sortKey(r){ const p=parseDate(r.born); return p ? p.y*10000 + (p.m||0)*100 + (p.d||0) : 99999999; }
+function isLate(r){ return !!(r.deceased || str(r.died)); }
+function genColor(g){ return `var(--g${Math.min(Math.max(g,17),22)})`; }
+function genName(g){ return GEN_LABEL[g] || `${g-ROOT_GEN-2}× great-grandsons & granddaughters`; }
+function genNo(g){ return g===ROOT_GEN ? "Head of family" : `Generation ${g-ROOT_GEN}`; }
+function genShort(g){ return g===ROOT_GEN ? "Head" : `Gen ${g-ROOT_GEN}`; }
+function isDaughter(r){ return r.gender === "f"; }
+function so(r){ return r.gender === "f" ? "D/o" : r.gender === "m" ? "S/o" : "Child of"; }
+function marriedInto(r){ return isDaughter(r) && str(r.spouseFamily) ? `Married into the ${r.spouseFamily} family` : ""; }
+
+/* ---------- Merge register + family additions ---------- */
+const FIELDS = ["name","gender","maiden","parent","born","died","deceased","birthplace","lives","surname","spouse","spouseFamily","spousePlace","spouseBorn","spouseDied","anniversary","marriagePlace","notes","updatedBy","updatedAt"];
+function rebuild(){
+  const merged = {};
+  for (const r of REGISTER) merged[r.id] = {...r};
+  for (const [id, d] of Object.entries(overlay)){
+    if (!d || typeof d !== "object") continue;
+    const base = merged[id] || {id};
+    const rec = {...base, id};
+    for (const f of FIELDS) if (f in d) rec[f] = (f === "deceased") ? !!d[f] : (d[f] == null ? "" : String(d[f]).slice(0, f==="notes"?1000:160));
+    if (id === ROOT) rec.parent = null;
+    rec.removed = !!d.removed;
+    rec.edited = true;
+    rec.fromFamily = !REGISTER.some(r=>r.id===id);
+    if (!str(rec.name)) continue;
+    merged[id] = rec;
+  }
+  // keep only records reachable from the root
+  const ch = {};
+  for (const r of Object.values(merged)) if (!r.removed && r.parent && merged[r.parent]) (ch[r.parent] ||= []).push(r.id);
+  for (const k in ch) ch[k].sort((a,b)=>sortKey(merged[a])-sortKey(merged[b]) || merged[a].name.localeCompare(merged[b].name));
+  people = {}; kids = {}; gens = {};
+  (function walk(id, g, seen){
+    if (seen.has(id)) return; seen.add(id);
+    people[id] = merged[id]; gens[id] = g; kids[id] = ch[id] || [];
+    kids[id].forEach(c => walk(c, g+1, seen));
+  })(ROOT, ROOT_GEN, new Set());
+  render();
+}
+
+/* ---------- Rendering ---------- */
+function render(){
+  renderHelp(); renderRecent();
+  renderStats(); renderLegend(); renderTree(); renderMembers(); renderDates(); renderLineage();
+  if (selected && people[selected]) openDrawer(selected, true); else if (selected) closeDrawer();
+}
+
+const names = {};   // user id -> display name
+async function resolveNames(ids){
+  ids = ids.filter(i => i && !(i in names));
+  if (!ids.length || !userCap || typeof userCap.profiles !== "function") return;
+  try{
+    const ps = await userCap.profiles(ids);
+    let changed = false;
+    for (const i of ids){ const n = ps && ps[i] && ps[i].name; names[i] = n || ""; changed = true; }
+    if (changed){ renderRecent(); if (selected) openDrawer(selected, true); }
+  }catch(_){}
+}
+function whoName(id){ return (id && names[id]) || "A family member"; }
+function renderHelp(){
+  const band = document.getElementById("helpband"), t = document.getElementById("helptext");
+  const me2 = document.getElementById("meBtn2");
+  if (PUBLIC){
+    band.hidden = false; me2.hidden = true;
+    t.replaceChildren("This is the public family tree. Family members can add birthdays, marriage anniversaries and other details on the ", el("a",{href:FAMILY_SITE,target:"_blank",rel:"noopener",text:"family's private site"}), ".");
+    return;
+  }
+  if (db && canWrite && !writeBlocked){
+    band.hidden = false; me2.hidden = false;
+    t.textContent = "Every member of the family can add their own dates here: date of birth, husband's or wife's date of birth, date of marriage and, for those no longer with us, the date of passing. Find your name and fill in what you know.";
+  } else if (db && writeBlocked){
+    band.hidden = false; me2.hidden = true;
+    t.textContent = "You can view the family tree. To add your own details, ask the site's owner to give you Contributor access.";
+  } else if (dbChecked && !db){
+    band.hidden = false; me2.hidden = true;
+    t.textContent = "To add your own details and see the family's latest updates, open this page signed in to Claude.";
+  } else band.hidden = true;
+}
+function renderRecent(){
+  const list = Object.values(people).filter(r=>r.edited && str(r.updatedAt)).sort((a,b)=>str(b.updatedAt).localeCompare(str(a.updatedAt))).slice(0,8);
+  document.getElementById("recentbox").hidden = PUBLIC || !list.length;
+  document.getElementById("recent").replaceChildren(...list.map(r=>el("li",null,
+    el("button",{class:"chain",style:"font-size:14px;padding:0",onclick:()=>openDrawer(r.id),text:r.name}),
+    el("span",{class:"sub",text:`${whoName(r.updatedBy)} · ${isoToDmy(r.updatedAt)}`}))));
+  resolveNames(list.map(r=>r.updatedBy));
+}
+
+function renderGenCounts(){
+  const byGen = {};
+  for (const [id,g] of Object.entries(gens)){ if (id===ROOT) continue; const r = people[id]; const b = (byGen[g] ||= {s:0,d:0,o:0}); if (r.gender==="m") b.s++; else if (r.gender==="f") b.d++; else b.o++; }
+  const list = Object.keys(byGen).map(Number).sort((a,b)=>a-b);
+  const next = (list.length ? list[list.length-1] : ROOT_GEN) + 1;
+  const tiles = list.map(g=>{
+    const b = byGen[g], tot = b.s+b.d+b.o, c = genColor(g);
+    const n = g-ROOT_GEN, pre = n<=1 ? "" : n===2 ? "grand" : n<=4 ? "great-".repeat(n-2)+"grand" : `${n-2}× great-grand`;
+    const sons = pre+"sons", dau = pre+"daughters";
+    return el("button",{class:"gc",style:`--c:${c}`,title:`See everyone in ${genNo(g)}`,onclick:()=>{ genFilter=g; location.hash="members"; show("members"); renderMembers(); document.getElementById("view-members").scrollIntoView({behavior:"smooth",block:"start"}); }},
+      el("span",{class:"gn",text:genNo(g)}),
+      el("span",{class:"gl",text:genName(g)}),
+      el("span",{class:"row"}, el("span",{class:"tot",text:tot}),
+        el("span",{class:"sd"}, el("b",{text:b.s}), ` ${b.s===1?sons.replace(/s$/,""):sons}`, el("br"), el("b",{text:b.d}), ` ${b.d===1?dau.replace(/s$/,""):dau}`, b.o ? [el("br"), el("b",{text:b.o}), " not stated"] : null)),
+      el("span",{class:"bar","aria-hidden":"true"}, el("i",{style:`width:${tot?b.s/tot*100:0}%;background:${c}`}), el("i",{style:`width:${tot?b.d/tot*100:0}%;background:color-mix(in srgb,${c} 45%,transparent)`})));
+  });
+  tiles.push(el("div",{class:"gc none"},
+    el("span",{class:"gn",text:genNo(next)}),
+    el("span",{class:"gl",text:genName(next)}),
+    el("span",{class:"sd",text:"No one recorded yet. Add the next generation as they arrive."})));
+  document.getElementById("gencount").replaceChildren(...tiles);
+}
+
+function renderStats(){
+  renderGenCounts();
+  const ids = Object.keys(people).filter(i=>i!==ROOT);
+  const maxG = Math.max(...Object.values(gens));
+  const places = new Set(ids.map(i=>str(people[i].lives)).filter(Boolean).map(p=>p.split(",").pop().trim().toLowerCase()));
+  const marriages = Object.values(people).filter(r=>str(r.spouse)).length;
+  const box = document.getElementById("stats"); box.replaceChildren(
+    el("div",{class:"stat"}, el("b",{text:ids.length}), el("span",{text:"Descendants"})),
+    el("div",{class:"stat"}, el("b",{text:maxG-ROOT_GEN}), el("span",{text:"Generations after him"})),
+    el("div",{class:"stat"}, el("b",{text:marriages}), el("span",{text:"Marriages recorded"})),
+    el("div",{class:"stat"}, el("b",{text:places.size}), el("span",{text:"Cities & countries"}))
+  );
+}
+
+function renderLegend(){
+  const present = [...new Set(Object.values(gens))].sort((a,b)=>a-b);
+  document.getElementById("legend").replaceChildren(...present.map(g =>
+    el("span",null, el("i",{style:`background:${genColor(g)}`}), `${genShort(g)} · ${genName(g)}`)));
+}
+
+const CW = 224, CH = 66, COL = 278, ROWH = 80, TOP = 44;
+function renderTree(){
+  document.getElementById("lay-tree").setAttribute("aria-pressed", layoutMode==="tree");
+  document.getElementById("lay-outline").setAttribute("aria-pressed", layoutMode==="outline");
+  document.getElementById("treebox").hidden = layoutMode !== "tree";
+  document.getElementById("outline").hidden = layoutMode !== "outline";
+  if (layoutMode === "tree") drawChart(); else drawOutline();
+}
+
+function drawChart(){
+  const pos = {}; let row = 0, maxDepth = 0;
+  (function place(id, depth){
+    maxDepth = Math.max(maxDepth, depth);
+    const k = kids[id];
+    if (!k.length || collapsed.has(id)){ pos[id] = {x:depth*COL, y:TOP + row*ROWH}; row++; return; }
+    k.forEach(c => place(c, depth+1));
+    pos[id] = {x:depth*COL, y:(pos[k[0]].y + pos[k[k.length-1]].y)/2};
+  })(ROOT, 0);
+  const W = maxDepth*COL + CW, H = TOP + row*ROWH;
+  const tree = document.getElementById("tree");
+  tree.style.width = W+"px"; tree.style.height = H+"px";
+  const ns = "http://www.w3.org/2000/svg";
+  const svg = document.createElementNS(ns,"svg"); svg.setAttribute("width",W); svg.setAttribute("height",H);
+  const frag = [svg];
+  for (let d=0; d<=maxDepth; d++){
+    const g = ROOT_GEN + d;
+    frag.push(el("div",{class:"colhead",style:`left:${d*COL}px`}, el("b",{text:genNo(g)}), el("br"), genName(g)));
+  }
+  for (const id of Object.keys(pos)){
+    const p = pos[id], r = people[id];
+    if (!collapsed.has(id)) for (const c of kids[id]){
+      const q = pos[c]; if (!q) continue;
+      const x1 = p.x + CW, y1 = p.y + CH/2, x2 = q.x, y2 = q.y + CH/2, mx = x1 + (x2-x1)/2;
+      const path = document.createElementNS(ns,"path");
+      path.setAttribute("d",`M${x1},${y1} C${mx},${y1} ${mx},${y2} ${x2},${y2}`);
+      svg.appendChild(path);
+    }
+    const meta1 = [r.born ? "b. "+shortDate(r.born) : "", str(r.lives) || str(r.birthplace)].filter(Boolean).join(" · ");
+    const meta2 = str(r.spouse) ? "m. " + r.spouse + (isDaughter(r) && str(r.spouseFamily) && !r.spouse.includes(r.spouseFamily) ? ` · ${r.spouseFamily} family` : "") : (marriedInto(r) || (r.died ? "d. "+shortDate(r.died) : ""));
+    const n = kids[id].length;
+    frag.push(el("div",{class:"node"+(id===ROOT?" root":"")+(id===selected?" sel":""),style:`left:${p.x}px;top:${p.y}px`,"data-id":id},
+      el("span",{class:"stripe",style:`background:${genColor(gens[id])}`}),
+      el("button",{class:"main",title:r.name,onclick:()=>openDrawer(id)},
+        el("div",{class:"nm"}, r.name, isLate(r) ? el("span",{class:"late",text:"Late"}) : null),
+        el("div",{class:"mt",text:meta1 || " "}),
+        el("div",{class:"mt",text:meta2 || " "})),
+      n ? el("button",{class:"tog","aria-expanded":String(!collapsed.has(id)),"aria-label":`${collapsed.has(id)?"Unfold":"Fold"} ${n} ${n===1?"child":"children"} of ${r.name}`,onclick:()=>{collapsed.has(id)?collapsed.delete(id):collapsed.add(id); renderTree();}},
+        el("span",{text:collapsed.has(id)?"▸":"▾"}), el("span",{text:n})) : null
+    ));
+  }
+  tree.replaceChildren(...frag);
+}
+
+function drawOutline(){
+  function item(id){
+    const r = people[id], k = kids[id], open = !collapsed.has(id);
+    const meta = [r.born ? shortDate(r.born) : "", str(r.spouse) ? "m. "+r.spouse : marriedInto(r), str(r.lives)].filter(Boolean).join(" · ");
+    return el("li",null,
+      el("div",{class:"orow"},
+        k.length ? el("button",{class:"tg","aria-expanded":String(open),"aria-label":(open?"Fold ":"Unfold ")+r.name,onclick:()=>{open?collapsed.add(id):collapsed.delete(id); renderTree();},text:open?"▾":"▸"}) : el("span",{style:"width:22px;flex:none"}),
+        el("span",{class:"dot",style:`background:${genColor(gens[id])}`}),
+        el("div",null, el("button",{class:"nmb",onclick:()=>openDrawer(id)}, r.name, isLate(r)?el("span",{class:"late",text:"Late"}):null), el("div",{class:"mt",text:meta}))),
+      k.length && open ? el("ul",null, k.map(item)) : null);
+  }
+  document.getElementById("outline").replaceChildren(el("ul",null,item(ROOT)));
+}
+
+function renderMembers(){
+  const q = str(document.getElementById("q").value).toLowerCase();
+  const present = [...new Set(Object.values(gens))].sort((a,b)=>a-b);
+  document.getElementById("genchips").replaceChildren(
+    el("button",{class:"chip","aria-pressed":String(genFilter===null),onclick:()=>{genFilter=null;renderMembers();},text:"All"}),
+    ...present.map(g=>el("button",{class:"chip","aria-pressed":String(genFilter===g),onclick:()=>{genFilter=g;renderMembers();},text:genNo(g)})));
+  const rows = Object.values(people)
+    .filter(r => genFilter===null || gens[r.id]===genFilter)
+    .filter(r => !q || [r.name,r.maiden,r.birthplace,r.lives,r.spouse,r.spouseFamily,r.notes].some(v=>str(v).toLowerCase().includes(q)))
+    .sort((a,b)=>gens[a.id]-gens[b.id] || sortKey(a)-sortKey(b));
+  const total = Object.keys(people).length;
+  document.getElementById("memcount").textContent = rows.length===total ? `${total} people in the register` : `${rows.length} of ${total} people`;
+  const tb = document.getElementById("tbody");
+  if (!rows.length){ tb.replaceChildren(el("tr",null, el("td",{colspan:"7",class:"empty",text:"No one matches that search."}))); return; }
+  tb.replaceChildren(...rows.map(r => el("tr",{tabindex:"0",onclick:()=>openDrawer(r.id),onkeydown:e=>{if(e.key==="Enter")openDrawer(r.id);}},
+    el("td",null, el("strong",{text:r.name}), isLate(r)?el("span",{class:"late",text:"Late"}):null),
+    el("td",null, el("span",{class:"gen"}, el("i",{style:`background:${genColor(gens[r.id])}`}), genNo(gens[r.id]))),
+    el("td",{class:"num",text:shortDate(r.born) || "—"}),
+    el("td",{text:str(r.birthplace) || "—"}),
+    el("td",{text:str(r.lives) || "—"}),
+    el("td",null, str(r.spouse) ? r.spouse + (str(r.spouseFamily)&&!r.spouse.includes(r.spouseFamily)?` (${r.spouseFamily})`:"") : (marriedInto(r) || "—"), str(r.maiden) ? el("div",{class:"sub",style:"font-size:12px",text:"née "+r.maiden}) : null),
+    el("td",{text:r.parent && people[r.parent] ? `${so(r)} ${people[r.parent].name}` : "—"}))));
+}
+
+function nextOccurrence(p, today){
+  let y = today.getFullYear();
+  let dt = new Date(y, p.m-1, p.d);
+  if (dt < today) dt = new Date(y+1, p.m-1, p.d);
+  return dt;
+}
+function collectEvents(){
+  const ev = [];
+  for (const r of Object.values(people)){
+    const b = parseDate(r.born); const late = isLate(r);
+    if (b && b.d) ev.push({id:r.id,kind:late?"r":"b",label:late?"Birth anniversary":"Birthday",p:b,extra:`born ${b.y}`});
+    const a = parseDate(r.anniversary);
+    if (a && a.d) ev.push({id:r.id,kind:"a",label:"Marriage anniversary",p:a,extra:`${str(r.spouse)?"with "+r.spouse+", ":""}married ${a.y}`});
+    const d = parseDate(r.died);
+    if (d && d.d) ev.push({id:r.id,kind:"r",label:"Punya tithi",p:d,extra:`passed away ${d.y}`});
+    if (str(r.spouse)){
+      const rel = r.gender==="f" ? "husband" : r.gender==="m" ? "wife" : "spouse";
+      const sd = parseDate(r.spouseDied), sb = parseDate(r.spouseBorn);
+      if (sb && sb.d) ev.push({id:r.id,kind:sd?"r":"b",label:sd?"Birth anniversary":"Birthday",p:sb,extra:`${r.spouse}, ${rel} of ${r.name.split(" ")[0]} · born ${sb.y}`,who:r.spouse});
+      if (sd && sd.d) ev.push({id:r.id,kind:"r",label:"Punya tithi",p:sd,extra:`${r.spouse}, ${rel} of ${r.name.split(" ")[0]} · passed away ${sd.y}`,who:r.spouse});
+    }
+  }
+  return ev;
+}
+function renderDates(){
+  const today = new Date(); today.setHours(0,0,0,0);
+  const ev = collectEvents();
+  const annivCount = ev.filter(e=>e.kind==="a").length;
+  const marriedNoDate = Object.values(people).filter(r=>str(r.spouse) && !parseDate(r.anniversary)).length;
+  document.getElementById("annivnote").replaceChildren(marriedNoDate ? el("p",{class:"note"},
+    annivCount ? `${marriedNoDate} marriages still have no anniversary date.` : `No marriage anniversaries are recorded yet. ${marriedNoDate} marriages are listed in the register.`,
+    canWrite ? " Open a member and choose Edit to add the date." : "") : "");
+  const up = ev.map(e=>({...e,when:nextOccurrence(e.p,today)})).sort((a,b)=>a.when-b.when).slice(0,12);
+  const box = document.getElementById("upcoming");
+  box.replaceChildren(...up.map(e=>{
+    const days = Math.round((e.when - today)/86400000);
+    const r = people[e.id];
+    return el("div",{class:"evt"},
+      el("div",{class:"cal"}, el("b",{text:e.when.getDate()}), el("span",{text:MON3[e.when.getMonth()]})),
+      el("div",null,
+        el("button",{class:"who",onclick:()=>openDrawer(e.id),text:e.who || r.name}),
+        el("div",{class:"what"}, el("span",{class:"kind "+e.kind,text:e.label}), days===0?"Today":days===1?"Tomorrow":`In ${days} days`, " · ", e.extra)));
+  }));
+  const byMonth = Array.from({length:12},()=>[]);
+  ev.forEach(e=>byMonth[e.p.m-1].push(e));
+  document.getElementById("months").replaceChildren(...byMonth.map((list,i)=>el("div",{class:"month"},
+    el("h4",{text:MONTHS[i]}),
+    list.length ? el("ol",null, list.sort((a,b)=>a.p.d-b.p.d).map(e=>el("li",null,
+      el("span",{class:"d",text:e.p.d}),
+      el("span",null, el("button",{onclick:()=>openDrawer(e.id),text:e.who || people[e.id].name}), e.kind!=="b" ? el("span",{class:"sub",style:"font-size:12px"}, " · "+(e.kind==="a"?"anniversary":e.label.toLowerCase())) : null)
+    ))) : el("p",{class:"sub",style:"margin:0",text:"—"}))));
+}
+
+function renderLineage(){
+  document.getElementById("lineage").replaceChildren(...LINEAGE.map(l=>el("div",{class:"lin"+(l.gap?" gap":"")+(l.here?" here":"")},
+    el("div",{class:"g",text:`No. ${l.g}`}), el("div",{class:"y",text:l.y}),
+    el("div",null, l.here ? el("button",{style:"padding:0;border:0;background:none;cursor:pointer;text-align:left;color:inherit;font:inherit",onclick:()=>openDrawer(ROOT)}, el("span",{class:"n",text:l.n})) : el("div",{class:"n",text:l.n}), l.r ? el("div",{class:"r",text:l.r}) : null))));
+}
+
+/* ---------- Detail drawer ---------- */
+function relationTo(id){
+  const r = people[id], g = gens[id] - ROOT_GEN;
+  if (g===0) return "The patriarch of Madho Niwas";
+  const w = r.gender==="f" ? ["Daughter","Granddaughter","granddaughter"] : r.gender==="m" ? ["Son","Grandson","grandson"] : ["Child","Grandchild","grandchild"];
+  const rel = g===1 ? w[0] : g===2 ? w[1] : g===3 ? "Great-"+w[2] : g===4 ? "Great-great-"+w[2] : `${g-2}× great-${w[2]}`;
+  return rel + " of Rao Bahadur Madho Prasad Gupta";
+}
+function openDrawer(id, quiet){
+  const r = people[id]; if (!r) return;
+  selected = id;
+  document.getElementById("d-gen").replaceChildren(el("span",{style:`color:${genColor(gens[id])}`,text:`${genNo(gens[id])} · ${genName(gens[id])}`}));
+  document.getElementById("d-name").textContent = r.name;
+  document.getElementById("d-rel").textContent = relationTo(id);
+  const facts = [];
+  const add = (k,v)=>{ if (v) facts.push(el("dt",{text:k}), el("dd",{text:v})); };
+  add("Born", [fmtDate(r.born), str(r.birthplace) && `at ${r.birthplace}`].filter(Boolean).join(" ") || (str(r.birthplace) ? `at ${r.birthplace}` : ""));
+  add("Name at birth", str(r.maiden));
+  add("Register", `Generation ${gens[id]} of the Shura Shah Parivaar`);
+  add("Lives in", str(r.lives));
+  if (isLate(r)) add("Passed away", fmtDate(r.died) || "Yes");
+  if (isDaughter(r)){
+    add(r.gender==="f" ? "Husband" : "Spouse", str(r.spouse) ? [r.spouse, str(r.spousePlace) && `of ${r.spousePlace}`].filter(Boolean).join(" ") : "");
+    add("Married into", str(r.spouseFamily) ? `${r.spouseFamily} family` + (!str(r.spouse) && str(r.spousePlace) ? `, ${r.spousePlace}` : "") : "");
+  } else {
+    add(r.gender==="m" ? "Wife" : "Spouse", str(r.spouse) ? [r.spouse, str(r.spouseFamily) && !r.spouse.includes(r.spouseFamily) ? `(${r.spouseFamily} family)` : "", str(r.spousePlace) && `of ${r.spousePlace}`].filter(Boolean).join(" ") : (str(r.spousePlace) ? `Married into a family of ${r.spousePlace}` : ""));
+  }
+  if (str(r.spouse)){
+    const rel = r.gender==="f" ? "Husband's" : r.gender==="m" ? "Wife's" : "Spouse's";
+    add(`${rel} birth`, fmtDate(r.spouseBorn));
+    add(`${rel} passing`, fmtDate(r.spouseDied));
+  }
+  add("Date of marriage", [fmtDate(r.anniversary), str(r.marriagePlace) && `at ${r.marriagePlace}`].filter(Boolean).join(" "));
+  add("Sur name", str(r.surname));
+  const body = [el("dl",{class:"facts"}, facts.length ? facts : [el("dt",{text:"Details"}), el("dd",{text:"Not yet recorded"})])];
+  if (str(r.notes)) body.push(el("h4",{text:"Notes"}), el("div",{class:"notes",text:r.notes}));
+  if (isDaughter(r) && str(r.spouseFamily) && !kids[id].length) body.push(el("p",{class:"note",style:"margin-top:14px",text:`Her children carry the ${r.spouseFamily} family name. They can be added here as her children so the tree shows Rao Bahadur's full descent.`}));
+  if (r.parent && people[r.parent]) body.push(el("h4",{text:isDaughter(r) ? "Daughter of" : r.gender==="m" ? "Son of" : "Parent"}), el("div",{class:"links"}, el("button",{class:"plink",onclick:()=>openDrawer(r.parent),text:people[r.parent].name})));
+  const sibs = r.parent ? kids[r.parent].filter(x=>x!==id) : [];
+  if (sibs.length) body.push(el("h4",{text:"Brothers & sisters"}), el("div",{class:"links"}, sibs.map(s=>el("button",{class:"plink",onclick:()=>openDrawer(s),text:people[s].name}))));
+  if (kids[id].length) body.push(el("h4",{text:`Sons & daughters (${kids[id].length})`}), el("div",{class:"links"}, kids[id].map(c=>el("button",{class:"plink",onclick:()=>openDrawer(c),text:people[c].name}))));
+  if (id !== ROOT){
+    const chain = []; let cur = id; while (cur){ chain.unshift(cur); cur = people[cur].parent; }
+    body.push(el("h4",{text:"Line from Rao Bahadur"}), el("div",{class:"chain"}, chain.flatMap((c,i)=>[i?" → ":"", c===id ? el("strong",{text:people[c].name}) : el("button",{onclick:()=>openDrawer(c),text:people[c].name})])));
+  }
+  if (!PUBLIC && r.edited && str(r.updatedAt)) body.push(el("p",{class:"upd",text:`${r.fromFamily ? "Added" : "Last updated"} by ${whoName(r.updatedBy)} on ${isoToDmy(r.updatedAt)}.`}));
+  if (r.edited) resolveNames([r.updatedBy]);
+  const missing = [];
+  if (!parseDate(r.born) || !parseDate(r.born).d) missing.push("date of birth");
+  if (str(r.spouse) && !parseDate(r.anniversary)) missing.push("date of marriage");
+  if (str(r.spouse) && !parseDate(r.spouseBorn)) missing.push((r.gender==="f"?"husband's":"wife's")+" date of birth");
+  if (missing.length && canWrite && !writeBlocked) body.push(el("p",{class:"note",style:"margin-top:14px",text:`Still to add: ${missing.join(", ")}.`}));
+  document.getElementById("d-body").replaceChildren(...body);
+  const foot = [];
+  if (canWrite && !writeBlocked){
+    foot.push(el("button",{class:"btn",onclick:()=>openForm("edit",id),text:"Edit details"}));
+    foot.push(el("button",{class:"btn primary",onclick:()=>openForm("add",id),text:"+ Add a child"}));
+  }
+  document.getElementById("d-foot").replaceChildren(...foot);
+  document.getElementById("d-foot").hidden = !foot.length;
+  document.querySelectorAll(".node.sel").forEach(n=>n.classList.remove("sel"));
+  document.querySelector(`.node[data-id="${CSS.escape(id)}"]`)?.classList.add("sel");
+  const dr = document.getElementById("drawer");
+  if (!quiet || !dr.classList.contains("on")){
+    dr.classList.add("on"); dr.setAttribute("aria-hidden","false");
+    document.getElementById("scrim").classList.add("on");
+    if (!quiet) document.getElementById("d-close").focus({preventScroll:true});
+  }
+  document.getElementById("d-body").scrollTop = 0;
+}
+function closeDrawer(){
+  selected = null;
+  const dr = document.getElementById("drawer"); dr.classList.remove("on"); dr.setAttribute("aria-hidden","true");
+  document.getElementById("scrim").classList.remove("on");
+  document.querySelectorAll(".node.sel").forEach(n=>n.classList.remove("sel"));
+}
+
+/* ---------- Add / edit form ---------- */
+let formMode = null, formId = null;
+function descendantsOf(id){ const out = new Set(); (function w(x){ for (const c of kids[x]||[]){ out.add(c); w(c);} })(id); return out; }
+function openForm(mode, id){
+  formMode = mode; formId = mode==="edit" ? id : null;
+  const r = mode==="edit" ? people[id] : {};
+  document.getElementById("m-title").textContent = mode==="edit" ? `Edit ${r.name}` : "Add a family member";
+  const banned = mode==="edit" ? new Set([id, ...descendantsOf(id)]) : new Set();
+  const opts = Object.values(people).filter(p=>!banned.has(p.id)).sort((a,b)=>gens[a.id]-gens[b.id]||sortKey(a)-sortKey(b));
+  const sel = document.getElementById("f-parent");
+  sel.replaceChildren(...opts.map(p=>el("option",{value:p.id,text:`${p.name} · ${genNo(gens[p.id])}`})));
+  sel.disabled = mode==="edit" && id===ROOT;
+  if (mode==="edit" && id===ROOT) sel.replaceChildren(el("option",{value:"",text:"Head of the family"}));
+  sel.value = mode==="edit" ? (r.parent||"") : (id || selected || ROOT);
+  const set = (k,v)=>{ document.getElementById(k).value = v || ""; };
+  set("f-name", r.name); set("f-maiden", r.maiden); document.getElementById("f-gender").value = r.gender === "f" ? "f" : "m";
+  document.getElementById("f-gender").disabled = mode==="edit" && id===ROOT; set("f-born", r.born); set("f-birthplace", r.birthplace); set("f-lives", r.lives); set("f-surname", r.surname);
+  set("f-spouse", r.spouse); set("f-spouseFamily", r.spouseFamily); set("f-spousePlace", r.spousePlace); set("f-anniv", r.anniversary); set("f-spouseBorn", r.spouseBorn); set("f-spouseDied", r.spouseDied); set("f-marriagePlace", r.marriagePlace);
+  set("f-died", r.died); set("f-notes", r.notes);
+  document.getElementById("f-deceased").checked = !!r.deceased || !!str(r.died);
+  msg("");
+  document.getElementById("f-save").disabled = false;
+  document.getElementById("modal").classList.add("on");
+  document.getElementById("f-name").focus();
+}
+function closeForm(){ document.getElementById("modal").classList.remove("on"); formMode = null; }
+function msg(t, err){ const m = document.getElementById("f-msg"); m.textContent = t; m.className = "formmsg" + (err?" err":""); }
+function normDate(s){ const p = parseDate(s); if (!p) return ""; return p.d ? `${String(p.d).padStart(2,"0")}.${String(p.m).padStart(2,"0")}.${p.y}` : String(p.y); }
+
+document.getElementById("form").addEventListener("submit", async e=>{
+  e.preventDefault();
+  if (!db) return;
+  const v = k => str(document.getElementById(k).value);
+  const name = v("f-name");
+  if (!name){ msg("Please enter a name.", true); return; }
+  for (const [k,label,dayNeeded] of [["f-born","Date of birth"],["f-died","Date of passing"],["f-spouseBorn","Husband's / wife's date of birth"],["f-spouseDied","Husband's / wife's date of passing"],["f-anniv","Date of marriage",true]]){
+    const s = v(k); if (!s) continue;
+    const p = parseDate(s);
+    if (!p || (dayNeeded && !p.d)){ msg(`${label}: write it as ${dayNeeded?"DD.MM.YYYY":"DD.MM.YYYY or just the year"}, for example 21.10.1919.`, true); return; }
+  }
+  const parent = formMode==="edit" && formId===ROOT ? null : v("f-parent");
+  if (formId !== ROOT && !people[parent]){ msg("Choose whose son or daughter this is.", true); return; }
+  const data = {
+    name, gender:document.getElementById("f-gender").value, maiden:v("f-maiden"), parent, born:normDate(v("f-born")), birthplace:v("f-birthplace"), lives:v("f-lives"), surname:v("f-surname"),
+    spouse:v("f-spouse"), spouseFamily:v("f-spouseFamily"), spousePlace:v("f-spousePlace"), anniversary:normDate(v("f-anniv")), spouseBorn:normDate(v("f-spouseBorn")), spouseDied:normDate(v("f-spouseDied")), marriagePlace:v("f-marriagePlace"),
+    deceased:document.getElementById("f-deceased").checked || !!v("f-died"), died:normDate(v("f-died")), notes:v("f-notes"),
+    updatedAt:new Date().toISOString(), updatedBy:myId || ""
+  };
+  if ((data.spouseBorn || data.spouseDied || data.anniversary) && !data.spouse){ msg("Please write the husband's or wife's name too.", true); return; }
+  const id = formMode==="edit" ? formId : "m-" + Date.now().toString(36) + Math.random().toString(36).slice(2,6);
+  const btn = document.getElementById("f-save"); btn.disabled = true; msg("Saving…");
+  try{
+    if (formMode==="edit" && people[id] && people[id].removed) data.removed = false;
+    await db.collection("members").doc(id).set(data);
+    overlay[id] = data; rebuild();
+    closeForm(); openDrawer(id);
+  }catch(err){
+    btn.disabled = false;
+    const code = err && err.code;
+    if (code === "invalid_argument"){ writeBlocked = true; document.getElementById("meBtn").hidden = true; document.getElementById("addBtn").hidden = true; renderHelp(); msg("You can view this register but not change it. Ask the site's owner to give you Contributor access.", true); }
+    else if (code === "quota_exceeded") msg("The register is full and cannot take new entries right now.", true);
+    else msg("Could not save just now. Check your connection and try again.", true);
+  }
+});
+
+/* ---------- "Update my details" picker ---------- */
+function openPicker(){
+  document.getElementById("picker").classList.add("on");
+  const q = document.getElementById("p-q"); q.value = ""; drawPicks(); q.focus();
+}
+function closePicker(){ document.getElementById("picker").classList.remove("on"); }
+function drawPicks(){
+  const q = str(document.getElementById("p-q").value).toLowerCase();
+  const list = Object.values(people)
+    .filter(r => !q || [r.name, r.maiden, r.spouse].some(v=>str(v).toLowerCase().includes(q)))
+    .sort((a,b)=>gens[b.id]-gens[a.id] || a.name.localeCompare(b.name)).slice(0,40);
+  document.getElementById("p-list").replaceChildren(...(list.length ? list.map(r=>el("li",null,
+    el("button",{onclick:()=>{ closePicker(); closeDrawer(); openForm("edit", r.id); }},
+      el("span",null, el("strong",{text:r.name}), str(r.spouse) ? el("span",{class:"sub",text:` · m. ${r.spouse}`}) : null),
+      el("span",{class:"sub",text:r.parent && people[r.parent] ? `${so(r)} ${people[r.parent].name}` : "Head of the family"})))) :
+    [el("li",{class:"empty",text:"No one by that name yet. Use “Add myself as a new member” below."})]));
+}
+document.getElementById("p-q").addEventListener("input", drawPicks);
+document.getElementById("p-close").onclick = closePicker;
+document.getElementById("p-new").onclick = ()=>{ closePicker(); openForm("add", ROOT); };
+document.getElementById("meBtn").onclick = openPicker;
+document.getElementById("meBtn2").onclick = openPicker;
+
+/* ---------- Navigation ---------- */
+const VIEWS = ["tree","members","dates","heritage"];
+function show(view){
+  if (!VIEWS.includes(view)) view = "tree";
+  for (const v of VIEWS){
+    document.getElementById("view-"+v).classList.toggle("on", v===view);
+    document.getElementById("tab-"+v).setAttribute("aria-selected", String(v===view));
+  }
+}
+document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>{ location.hash = b.dataset.view; show(b.dataset.view); }));
+window.addEventListener("hashchange",()=>show(location.hash.slice(1)));
+document.getElementById("lay-tree").onclick = ()=>{ layoutMode="tree"; renderTree(); };
+document.getElementById("lay-outline").onclick = ()=>{ layoutMode="outline"; renderTree(); };
+document.getElementById("expandAll").onclick = ()=>{ collapsed.clear(); renderTree(); };
+document.getElementById("collapseAll").onclick = ()=>{ collapsed.clear(); kids[ROOT].forEach(c=>{ if (kids[c].length) collapsed.add(c); }); renderTree(); };
+document.getElementById("q").addEventListener("input", renderMembers);
+document.getElementById("d-close").onclick = closeDrawer;
+document.getElementById("scrim").onclick = closeDrawer;
+document.getElementById("m-close").onclick = closeForm;
+document.getElementById("f-cancel").onclick = closeForm;
+document.getElementById("addBtn").onclick = ()=>openForm("add", selected || ROOT);
+document.addEventListener("keydown", e=>{ if (e.key==="Escape"){ if (document.getElementById("picker").classList.contains("on")) closePicker(); else if (document.getElementById("modal").classList.contains("on")) closeForm(); else closeDrawer(); } });
+
+show(location.hash.slice(1));
+rebuild();
+
+/* ---------- Shared database: family additions ---------- */
+(async ()=>{
+  const note = document.getElementById("syncnote");
+  try{
+    if (PUBLIC){ dbChecked = true; renderHelp(); note.textContent = "Public edition of the family register."; return; }
+    if (!window.claude || typeof window.claude.use !== "function"){ dbChecked = true; renderHelp(); note.textContent = "Showing the family register."; return; }
+    db = await window.claude.use("db");
+    dbChecked = true;
+    if (!db){ renderHelp(); note.textContent = "Showing the family register. Sign in to Claude to see and add the family's updates."; return; }
+    userCap = await window.claude.use("user");
+    try{ myId = userCap ? await userCap.id() : null; }catch(_){ myId = null; }
+    let cw = null;
+    try{ cw = userCap ? await userCap.can("data.write") : null; }catch(_){ cw = null; }
+    canWrite = cw !== false;
+    document.getElementById("addBtn").hidden = !canWrite;
+    document.getElementById("meBtn").hidden = !canWrite;
+    renderHelp();
+    note.textContent = "Loading the family's updates…";
+    let timer = setTimeout(()=>{ note.textContent = "The family's updates can't be reached yet. Showing the family register."; }, 10000);
+    db.collection("members").onSnapshot(snap=>{
+      const next = {};
+      snap.docs.forEach(d=>{ if (d.exists) next[d.id] = d.data(); });
+      overlay = next; rebuild();
+      if (!snap.metadata.fromCache){ clearTimeout(timer); timer = null; }
+      const added = Object.keys(next).filter(k=>!REGISTER.some(r=>r.id===k)).length;
+      const edited = Object.keys(next).length - added;
+      note.textContent = `Family register of ${REGISTER.length} entries` + (added||edited ? ` · ${added} added and ${edited} updated by the family` : "") + (canWrite ? " · You can add and edit members." : "");
+    }, err=>{
+      clearTimeout(timer);
+      note.textContent = "The family's updates are unavailable right now. Showing the family register.";
+    });
+  }catch(_){ note.textContent = "Showing the family register."; }
+})();
+</script>
+</body>
+</html>
